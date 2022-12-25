@@ -3,13 +3,9 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "furamaAngular": {
+    "hackernews": {
       "projectType": "application",
-      "schematics": {
-        "@schematics/angular:application": {
-          "strict": true
-        }
-      },
+      "schematics": {},
       "root": "",
       "sourceRoot": "src",
       "prefix": "app",
@@ -17,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/furamaAngular",
+            "outputPath": "dist/hackernews",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -28,7 +24,9 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.css",
+              "node_modules/bootstrap/dist/css/bootstrap.css",
+              "node_modules/bootstrap-icons/font/bootstrap-icons.css"
             ],
             "scripts": ["node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"]
           },
@@ -50,13 +48,13 @@
               "budgets": [
                 {
                   "type": "initial",
-                  "maximumWarning": "500kb",
-                  "maximumError": "1mb"
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
                 },
                 {
                   "type": "anyComponentStyle",
-                  "maximumWarning": "2kb",
-                  "maximumError": "4kb"
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
                 }
               ]
             }
@@ -65,18 +63,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "furamaAngular:build"
+            "browserTarget": "hackernews:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "furamaAngular:build:production"
+              "browserTarget": "hackernews:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "furamaAngular:build"
+            "browserTarget": "hackernews:build"
           }
         },
         "test": {
@@ -113,19 +111,19 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "furamaAngular:serve"
+            "devServerTarget": "hackernews:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "furamaAngular:serve:production"
+              "devServerTarget": "hackernews:serve:production"
             }
           }
         }
       }
     }
   },
-  "defaultProject": "furamaAngular",
+  "defaultProject": "hackernews",
   "cli": {
-    "analytics": "f0785ec7-76cf-4511-b52e-a6c3421f507f"
+    "analytics": "e6c25fcf-df16-4823-8f87-81f1c3d02147"
   }
 }
