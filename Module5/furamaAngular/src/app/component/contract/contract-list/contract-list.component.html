@@ -14,25 +14,22 @@
       </tr>
       <tr>
         <th>#</th>
-        <th hidden>C.id</th>
-        <th>Facility</th>
+        <th>FacilityName</th>
         <th>CustomerName</th>
         <th>StarDate</th>
         <th>EndDate</th>
         <th>Deposit(USD)</th>
-        <th>TotalMoney(USD)</th>
         <th colspan="2">AttachFacilities</th>
       </tr>
       </thead>
       <tbody>
-      <tr>
-        <td>1</td>
-        <td>2</td>
-        <td>3</td>
-        <td>4</td>
-        <td>5</td>
-        <td>6</td>
-        <td>7</td>
+      <tr *ngFor="let contract of contractList;index as i">
+        <td>{{i+1}}</td>
+        <td>{{contract.facility?.name}}</td>
+        <td>{{contract.customer?.name}}</td>
+        <td>{{contract.startDate}}</td>
+        <td>{{contract.endDate}}</td>
+        <td>{{contract.deposit}}</td>
         <td>
           <button class="btn btn-primary"> +
           </button>

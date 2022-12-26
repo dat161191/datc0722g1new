@@ -1,4 +1,4 @@
-<div class="container mb-1">
+<div class="container">
   <div class="row" >
     <div class="col col-4" *ngFor="let faci of facilityList">
       <div class="card">
@@ -19,7 +19,7 @@
               </tr>
               <tr>
                 <th>Cost(VND):</th>
-                <td>{{faci.cost | currency:'EUR':true}}</td>
+                <td>{{faci.cost | currency:'VND':true}}</td>
               </tr>
               <tr>
                 <th>MaxPeople:</th>

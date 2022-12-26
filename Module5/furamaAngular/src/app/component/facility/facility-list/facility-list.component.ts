@@ -44,7 +44,7 @@ export class FacilityListComponent implements OnInit {
       facilityType: {id: 3, name: "Room"},
       rentType: {id: 3, name: "Date"},
       standardRoom: "NOMARL",
-      descriptionOtherConvenience: "has 1 Ducati",
+      descriptionOtherConvenience: "Has 1 Ducati",
       facilityFree: "Massage Body"
     },{
       id: 3,
@@ -55,7 +55,7 @@ export class FacilityListComponent implements OnInit {
       facilityType: {id: 3, name: "Room"},
       rentType: {id: 3, name: "Date"},
       standardRoom: "NOMARL",
-      descriptionOtherConvenience: "has 1 Ducati",
+      descriptionOtherConvenience: "Has 1 Ducati",
       facilityFree: "Massage Body"
     },{
       id: 3,
@@ -66,7 +66,7 @@ export class FacilityListComponent implements OnInit {
       facilityType: {id: 3, name: "Room"},
       rentType: {id: 3, name: "Date"},
       standardRoom: "NOMARL",
-      descriptionOtherConvenience: "has 1 Ducati",
+      descriptionOtherConvenience: "Has 1 Ducati",
       facilityFree: "Massage Body"
     },{
       id: 3,
@@ -77,7 +77,7 @@ export class FacilityListComponent implements OnInit {
       facilityType: {id: 3, name: "Room"},
       rentType: {id: 3, name: "Date"},
       standardRoom: "NOMARL",
-      descriptionOtherConvenience: "has 1 Ducati",
+      descriptionOtherConvenience: "Has 1 Ducati",
       facilityFree: "Massage Body"
     }
   ]

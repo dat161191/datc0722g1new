@@ -25,16 +25,16 @@
       </tr>
       </thead>
       <tbody>
-      <tr class="text-danger">
-        <th>1</th>
-        <td>@mdo</td>
-        <td>Otto</td>
-        <td>@mdo</td>
-        <td>Mark</td>
-        <td>Otto</td>
-        <td>@mdo</td>
-        <td>@mdo</td>
-        <td>@mdo</td>
+      <tr class="text-danger" *ngFor="let customer of customerList;index as i">
+        <th>{{i+1}}</th>
+        <td>{{customer.name}}</td>
+        <td>{{customer.dateOfBirth|date:"dd/MM/yyyy"}}</td>
+        <td>{{customer.gender?'Male':'Female'}}</td>
+        <td>{{customer.idCard}}</td>
+        <td>{{customer.phoneNumber}}</td>
+        <td>{{customer.email}}</td>
+        <td>{{customer.address}}</td>
+        <td>{{customer.customerType?.name}}</td>
         <td>
           <button class="btn btn-primary" type="button" data-bs-toggle="modal"
                   data-bs-target="#exampleModalEdit"> Edit
