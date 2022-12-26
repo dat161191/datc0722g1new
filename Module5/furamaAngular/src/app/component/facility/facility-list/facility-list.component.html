@@ -1,193 +1,57 @@
 <div class="container mb-1">
-  <div class="row">
-    <div class="col col-4">
+  <div class="row" >
+    <div class="col col-4" *ngFor="let faci of facilityList">
       <div class="card">
         <img src="https://media-cdn.tripadvisor.com/media/vr-splice-j/09/88/5e/ac.jpg" class="card-img-top"
              alt="Fissure in Sandstone"/>
-        <div class="card-body">
-          <h5 class="card-title text-center text-danger"><b>Villa</b></h5>
+        <div class="card-body bg-success text-light">
+          <h3 class="card-title text-center "><b>{{faci.facilityType?.name}}</b></h3>
+          <hr>
           <div class="row">
             <table>
               <tr>
                 <th>FacilityName:</th>
-                <td>Super Villa</td>
+                <td>{{faci.name}}</td>
               </tr>
               <tr>
                 <th>Area:</th>
-                <td>5000m<sup>2</sup></td>
+                <td>{{faci.area}}m<sup>2</sup></td>
               </tr>
               <tr>
-                <th>Cost:</th>
-                <td></td>
-              </tr>
-              <tr>
-                <th>MaxPeople:</th>
-                <td></td>
-              </tr>
-              <tr>
-                <th>StandardRoom:</th>
-                <td></td>
-              </tr>
-              <tr>
-                <th>DescriptionConvenience:</th>
-                <td></td>
-              </tr>
-              <tr>
-                <th>PoolArea:</th>
-                <td>5000m<sup>2</sup></td>
-              </tr>
-              <tr>
-                <th>NumberOfFloors:</th>
-                <td></td>
-              </tr>
-              <tr>
-                <th>FacilityFree:</th>
-                <td></td>
-              </tr>
-              <tr>
-                <th>RentType :</th>
-                <td></td>
-              </tr>
-              <tr>
-                <th>FacilityType  :</th>
-                <td></td>
-              </tr>
-
-            </table>
-          </div>
-          <div class="row text-center">
-            <table>
-              <tr>
-                <td><a href="#!" class="btn btn-primary">Delete</a></td>
-                <td><a href="#!" class="btn btn-primary">Edit</a></td>
-              </tr>
-            </table>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="col col-4">
-      <div class="card">
-        <img src="https://cdn.vox-cdn.com/thumbor/frFQQhOsxl8DctGjkR8OLHpdKMs=/0x0:3686x2073/1200x800/filters:focal(1549x743:2137x1331)/cdn.vox-cdn.com/uploads/chorus_image/image/68976842/House_Tour_Liverman_3D6A3138_tour.0.jpg" class="card-img-top"
-             alt="Fissure in Sandstone"/>
-        <div class="card-body">
-          <h5 class="card-title text-center text-danger"><b>House</b></h5>
-          <div class="row">
-            <table>
-              <tr>
-                <th>FacilityName:</th>
-                <td>Super Villa</td>
-              </tr>
-              <tr>
-                <th>Area:</th>
-                <td>5000m<sup>2</sup></td>
-              </tr>
-              <tr>
-                <th>Cost:</th>
-                <td></td>
+                <th>Cost(VND):</th>
+                <td>{{faci.cost | currency:'EUR':true}}</td>
               </tr>
               <tr>
                 <th>MaxPeople:</th>
-                <td></td>
+                <td>{{faci.maxPeople}}</td>
               </tr>
               <tr>
                 <th>StandardRoom:</th>
-                <td></td>
+                <td>{{faci.standardRoom}}</td>
               </tr>
               <tr>
                 <th>DescriptionConvenience:</th>
-                <td></td>
+                <td>{{faci.descriptionOtherConvenience}}</td>
               </tr>
-              <tr>
+              <tr *ngIf="faci.poolArea">
                 <th>PoolArea:</th>
-                <td>5000m<sup>2</sup></td>
+                <td>{{faci.poolArea}}m<sup>2</sup></td>
               </tr>
-              <tr>
+              <tr *ngIf="faci.numberOfFloors">
                 <th>NumberOfFloors:</th>
-                <td></td>
+                <td>{{faci.numberOfFloors}}</td>
               </tr>
-              <tr>
+              <tr *ngIf="faci.facilityFree">
                 <th>FacilityFree:</th>
-                <td></td>
+                <td>{{faci.facilityFree}}</td>
               </tr>
               <tr>
                 <th>RentType :</th>
-                <td></td>
-              </tr>
-              <tr>
-                <th>FacilityType  :</th>
-                <td></td>
-              </tr>
-
-            </table>
-          </div>
-          <div class="row text-center">
-            <table>
-              <tr>
-                <td><a href="#!" class="btn btn-primary">Delete</a></td>
-                <td><a href="#!" class="btn btn-primary">Edit</a></td>
+                <td>{{faci.rentType?.name}}</td>
               </tr>
             </table>
           </div>
-        </div>
-      </div>
-
-    </div>
-    <div class="col col-4">
-      <div class="card">
-        <img src="https://s7d2.scene7.com/is/image/ritzcarlton/50569234-XIYRZ-Guest%20Room?$XlargeViewport100pct$" class="card-img-top"
-             alt="Fissure in Sandstone"/>
-        <div class="card-body">
-          <h5 class="card-title text-danger text-center"><b>Room</b></h5>
-          <div class="row">
-            <table>
-              <tr>
-                <th>FacilityName:</th>
-                <td>Super Villa</td>
-              </tr>
-              <tr>
-                <th>Area:</th>
-                <td>5000m<sup>2</sup></td>
-              </tr>
-              <tr>
-                <th>Cost:</th>
-                <td></td>
-              </tr>
-              <tr>
-                <th>MaxPeople:</th>
-                <td></td>
-              </tr>
-              <tr>
-                <th>StandardRoom:</th>
-                <td></td>
-              </tr>
-              <tr>
-                <th>DescriptionConvenience:</th>
-                <td></td>
-              </tr>
-              <tr>
-                <th>PoolArea:</th>
-                <td>5000m<sup>2</sup></td>
-              </tr>
-              <tr>
-                <th>NumberOfFloors:</th>
-                <td></td>
-              </tr>
-              <tr>
-                <th>FacilityFree:</th>
-                <td></td>
-              </tr>
-              <tr>
-                <th>RentType :</th>
-                <td></td>
-              </tr>
-              <tr>
-                <th>FacilityType  :</th>
-                <td></td>
-              </tr>
-
-            </table>
-          </div>
+          <hr>
           <div class="row text-center">
             <table>
               <tr>
