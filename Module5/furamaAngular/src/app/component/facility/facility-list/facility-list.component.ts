@@ -1,7 +1,5 @@
 import {Component, OnInit} from '@angular/core';
 import {Facility} from "../../../model/facility/Facility";
-import {FacilityType} from "../../../model/facility/FacilityType";
-import {RentType} from "../../../model/facility/RentType";
 
 @Component({
   selector: 'app-facility-list',
@@ -45,7 +43,7 @@ export class FacilityListComponent implements OnInit {
       rentType: {id: 3, name: "Date"},
       standardRoom: "NOMARL",
       descriptionOtherConvenience: "Has 1 Ducati",
-      facilityFree: "Massage Body"
+      facilityFree: "Massage Body",
     },{
       id: 3,
       name: "SuperRoom",
@@ -56,7 +54,7 @@ export class FacilityListComponent implements OnInit {
       rentType: {id: 3, name: "Date"},
       standardRoom: "NOMARL",
       descriptionOtherConvenience: "Has 1 Ducati",
-      facilityFree: "Massage Body"
+      facilityFree: "Massage Body",
     },{
       id: 3,
       name: "SuperRoom",
@@ -67,7 +65,7 @@ export class FacilityListComponent implements OnInit {
       rentType: {id: 3, name: "Date"},
       standardRoom: "NOMARL",
       descriptionOtherConvenience: "Has 1 Ducati",
-      facilityFree: "Massage Body"
+      facilityFree: "Massage Body",
     },{
       id: 3,
       name: "SuperRoom",
@@ -78,7 +76,8 @@ export class FacilityListComponent implements OnInit {
       rentType: {id: 3, name: "Date"},
       standardRoom: "NOMARL",
       descriptionOtherConvenience: "Has 1 Ducati",
-      facilityFree: "Massage Body"
+      facilityFree: "Massage Body",
+
     }
   ]
 
@@ -87,5 +86,4 @@ export class FacilityListComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
 }

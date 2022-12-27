@@ -27,8 +27,7 @@ export class ContractListComponent implements OnInit {
         idCard: "212567097",
         phoneNumber: "0385425443",
         email: "shmily1611@gmail.com",
-        address: "Quảng Ngãi"
-      },
+        address: "Quảng Ngãi"},
       facility: {
         id: 1,
         name: "SuperVilla",
@@ -40,7 +39,7 @@ export class ContractListComponent implements OnInit {
         standardRoom: "VIP",
         descriptionOtherConvenience: "Has 1 helicopter",
         poolArea: 50,
-        numberOfFloors: 5
+        numberOfFloors: 5,
       }
     },
     {
@@ -71,7 +70,7 @@ export class ContractListComponent implements OnInit {
         standardRoom: "VIP",
         descriptionOtherConvenience: "Has 1 helicopter",
         poolArea: 50,
-        numberOfFloors: 5
+        numberOfFloors: 5,
       }
     },
     {
@@ -81,15 +80,15 @@ export class ContractListComponent implements OnInit {
       deposit: 1000000,
       employee: {id: 3, name: "Lê Long "},
       customer: {
-        id : 3,
-        customerType : {id:1,name:"Dimond"},
-        name : "Lê Tạ Hà Phương",
-        dateOfBirth : "06/06/1995",
-        gender : true,
-        idCard : "212567297",
-        phoneNumber : "0962002842",
+        id: 3,
+        customerType: {id: 1, name: "Dimond"},
+        name: "Lê Tạ Hà Phương",
+        dateOfBirth: "06/06/1995",
+        gender: true,
+        idCard: "212567297",
+        phoneNumber: "0962002842",
         email: "Unknown",
-        address : "Quảng Nam"
+        address: "Quảng Nam"
       },
       facility: {
         id: 2,
@@ -111,15 +110,15 @@ export class ContractListComponent implements OnInit {
       deposit: 1000000,
       employee: {id: 2, name: "Nguyễn Khang"},
       customer: {
-        id : 4,
-        customerType : {id:1,name:"Dimond"},
-        name : "Đặng Phương Bảo",
-        dateOfBirth : "1999-06-15",
-        gender : true,
-        idCard : "212567297",
-        phoneNumber : "0909091797",
+        id: 4,
+        customerType: {id: 1, name: "Dimond"},
+        name: "Đặng Phương Bảo",
+        dateOfBirth: "1999-06-15",
+        gender: true,
+        idCard: "212567297",
+        phoneNumber: "0909091797",
         email: "Unknown",
-        address : "Nha Trang"
+        address: "Nha Trang"
       },
       facility: {
         id: 3,

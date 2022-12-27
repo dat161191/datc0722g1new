@@ -28,7 +28,7 @@ import { ContractCreateComponent } from './component/contract/contract-create/co
     CustomerEditComponent,
     CustomerCreateComponent,
     ContractListComponent,
-    ContractCreateComponent
+    ContractCreateComponent,
   ],
   imports: [
     BrowserModule,

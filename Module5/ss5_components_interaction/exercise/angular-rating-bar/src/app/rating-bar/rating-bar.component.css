@@ -1,0 +1,16 @@
+.rating-bar {
+  display: flex;
+}
+.rating-unit {
+  margin-right: 5px;
+  color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+  font-weight: 700;
+  cursor: pointer;
+}
+.active {
+  color: yellow;
+}
