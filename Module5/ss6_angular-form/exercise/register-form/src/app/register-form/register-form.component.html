@@ -51,7 +51,7 @@
             <label for="country">Country</label>
           </div>
           <div class="col-8">
-            <select id="country" formControlName="country" style="width: 100%;border-radius: 10px">
+            <select id="country" formControlName="country" class="form-select" style="width: 100%;border-radius: 10px">
               <option value="">---Choosen---</option>
               <option *ngFor="let c of countryList" [ngValue]="c">{{c.name}}</option>
             </select>

@@ -6,102 +6,132 @@
           <div class="card card-registration my-4">
             <div class="row g-0">
               <div class="col-xl-6 d-none d-xl-block">
-                <img src="https://i.vietgiaitri.com/2021/9/6/tim-ve-mien-bien-tho-mong-bac-nhat-mien-trung-tai-khu-nghi-duong-furama-resort-da-nang-sang-chanh-9e6-6010593.jpg"
-                     alt="Sample photo" class="img-fluid"
-                     style="width: 100%; height: 800px"/>
+                <img
+                  src="https://i.vietgiaitri.com/2021/9/6/tim-ve-mien-bien-tho-mong-bac-nhat-mien-trung-tai-khu-nghi-duong-furama-resort-da-nang-sang-chanh-9e6-6010593.jpg"
+                  alt="Sample photo" class="img-fluid"
+                  style="width: 90%;"/>
               </div>
               <div class="col-xl-6">
-                <form action="" method="post">
-                  <div class="card-body p-md-5 text-primary" style="font-size: 20px">
-                    <h3 class="mb-5 text-uppercase text-center">Create new Custom</h3>
-
-                    <div class="row">
-                      <div class="col-md-6 mb-4">
-                        <div class="form-outline">
-                          <input type="text" id="form3Example1m"
-                                 class="form-control form-control-lg"/>
-                          <label class="form-label" for="form3Example1m">Customer's Name</label>
-                        </div>
+                <form [formGroup]="formCustomer" (ngSubmit)="createCustomer()">
+                  <div class="card-body p-md-5 text-primary">
+                    <h3 class="mb-2 text-uppercase text-center">Create new Custom</h3>
+                    <hr>
+                    <div class="form-outline">
+                      <label class="form-label" for="name">CustomerName </label>
+                      <input type="text" name="name" id="name" formControlName="name"
+                             class="form-control"/>
+                      <div *ngIf="!cus?.valid && (cus.name.dirty ||cus.name.touched)">
+                        <small *ngIf="cus.name.errors?.required" style="color:red;"> Name is required! </small>
+                        <small *ngIf="cus.name.errors?.pattern" style="color:red;">The name is not in the correct
+                          format!!! </small>
                       </div>
-                      <div class="col-md-6 mb-4">
-                        <div class="form-outline">
-                          <input type="date" id="form3Example1n"
-                                 class="form-control form-control-lg text-primary"/>
-                          <label class="form-label" for="form3Example1n">Birthday:</label>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div class="d-md-flex justify-content-start align-items-center mb-4 py-2">
-
-                      <h6 class="mb-0 me-4">Gender: </h6>
-                      <div class="form-check form-check-inline mb-0 me-4">
-                        <input class="form-check-input" type="radio" name="inlineRadioOptions"
-                               id="maleGender"
-                               value="option2"/>
-                        <label class="form-check-label" for="maleGender">Male</label>
-                      </div>
-                      <div class="form-check form-check-inline mb-0 me-4">
-                        <input class="form-check-input" type="radio" name="inlineRadioOptions"
-                               id="femaleGender"
-                               value="option1"/>
-                        <label class="form-check-label" for="femaleGender">Female</label>
-                      </div>
-
-                    </div>
-                    <div class="row">
-                      <div class="col-md-6 mb-3">
-                        <div class="form-outline">
-                          <input type="text" id="form3Example1m1"
-                                 class="form-control form-control-lg"/>
-                          <label class="form-label" for="form3Example1m1">Id Card: </label>
-                        </div>
-                      </div>
-                      <div class="col-md-6 mb-3">
-                        <div class="form-outline">
-                          <input type="text" id="form3Example1n1"
-                                 class="form-control form-control-lg"/>
-                          <label class="form-label" for="form3Example1n1">Phone Number</label>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div class="form-outline mb-3">
-                      <input type="text" id="form3Example97"
-                             class="form-control form-control-lg"/>
-                      <label class="form-label" for="form3Example97">Email </label>
-                    </div>
-
-                    <div class="form-outline mb-3">
-                      <input type="text" id="form3Example8" class="form-control form-control-lg"/>
-                      <label class="form-label" for="form3Example8">Address</label>
                     </div>
 
                     <div class="row">
-                      <div class="col-md-12 mb-3">
-                        <label class="form-label col-xl-3" for="form3Example8">CustomerType </label>
-                        <select class="form-select-lg col-xl-8 text-primary">
-                          <option selected>-- Choosen---</option>
-                          <option value="1">Dimond</option>
-                          <option value="2">Platinium</option>
-                          <option value="3">Gold</option>
-                          <option value="4">Silver</option>
-                          <option value="4">Member</option>
-                        </select>
+                      <div class="col-md-6">
+                        <div class="form-outline">
+                          <label for="id">ID Customer</label>
+                          <input type="text" name="id" id="id" formControlName="id" class="form-control"/>
+                          <div *ngIf="!cus?.valid && (cus.id.dirty ||cus.id.touched)">
+                            <small *ngIf="cus.id.errors?.required" style="color:red;"> ID is required! </small>
+                            <small *ngIf="cus.id.errors?.pattern" style="color:red;">The ID is not in the correct
+                              format!!! </small>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="col-md-6">
+                        <div class="form-outline">
+                          <label class="form-label" for="dateOfBirth">Birthday:</label>
+                          <input type="date" name="dateOfBirth" id="dateOfBirth" formControlName="dateOfBirth"
+                                 class="form-control text-primary"/>
+                          <div *ngIf="!cus?.valid && (cus.dateOfBirth.dirty ||cus.dateOfBirth.touched)">
+                            <small *ngIf="cus.dateOfBirth.errors?.required" style="color:red;"> Birthday is required! </small>
+                          </div>
+                        </div>
                       </div>
                     </div>
-                    <div class="d-flex justify-content-center pt-3">
-                      <table>
-                        <tr>
-                          <td>
-                            <button type="submit" class="btn btn-primary mb-1 mt-1"><b>Create Customer</b></button>
-                          </td>
-                          <td>
-                            <a href="@{/facility}" class="btn btn-primary"><i
-                              class="bi bi-house-heart-fill"></i>Back To Customer List</a>
-                          </td>
-                        </tr>
-                      </table>
+
+                    <div class="d-md-flex justify-content-start align-items-center py-2">
+                      <label class="me-3"> Gender: </label>
+                      <div class="form-check form-check-inline me-4">
+                        <input class="form-check-input" type="radio" value=true id="male"
+                               name="gender" formControlName="gender"/>
+                        <label class="form-check-label" for="male">Male</label>
+                      </div>
+                      <div class="form-check form-check-inline me-4">
+                        <input class="form-check-input" type="radio" value=false id="female"
+                               name="gender" formControlName="gender"/>
+                        <label class="form-check-label" for="female">Female</label>
+                      </div>
+                      <div *ngIf="!cus?.valid && (cus.gender.dirty ||cus.gender.touched||cus.gender.pristine)">
+                        <small *ngIf="cus.gender.errors?.required" style="color:red;"> Gender is required! </small>
+                      </div>
+                    </div>
+
+                    <div class="row">
+                      <div class="col-md-6">
+                        <div class="form-outline">
+                          <label class="form-label" for="idCard">Id Card: </label>
+                          <input type="text" name="idCard" id="idCard" formControlName="idCard" class="form-control"/>
+                          <div *ngIf="!cus?.valid && (cus.idCard.dirty ||cus.idCard.touched)">
+                            <small *ngIf="cus.idCard.errors?.required" style="color:red;"> ID Card is required! </small>
+                            <small *ngIf="cus.idCard.errors?.pattern" style="color:red;">The ID Card is not in the correct
+                              format!!! </small>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="form-outline">
+                          <label class="form-label" for="phoneNumber">PhoneNumber: </label>
+                          <input type="text" name="phoneNumber" id="phoneNumber" formControlName="phoneNumber"
+                                 class="form-control"/>
+                          <div *ngIf="!cus?.valid && (cus.phoneNumber.dirty ||cus.phoneNumber.touched)">
+                            <small *ngIf="cus.phoneNumber.errors?.required" style="color:red;"> PhoneNumber is required! </small>
+                            <small *ngIf="cus.phoneNumber.errors?.pattern" style="color:red;">The PhoneNumber is not in the correct
+                              format!!! </small>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="form-outline">
+                      <label class="form-label" for="email">Email: </label>
+                      <input type="text" name="email" id="email" formControlName="email" class="form-control"/>
+                      <div *ngIf="!cus?.valid && (cus.email.dirty ||cus.email.touched)">
+                        <small *ngIf="cus.email.errors?.required" style="color:red;"> Email is required! </small>
+                        <small *ngIf="cus.email.errors?.pattern" style="color:red;">The Email is not in the correct
+                          format!!! </small>
+                      </div>
+                    </div>
+
+
+                    <div class="form-outline">
+                      <label class="form-label" for="address">Address: </label>
+                      <input type="text" name="address" id="address" formControlName="address" class="form-control"/>
+                      <div *ngIf="!cus?.valid && (cus.address.dirty ||cus.address.touched)">
+                        <small *ngIf="cus.address.errors?.required" style="color:red;"> Address is required! </small>
+                        <small *ngIf="cus.address.errors?.pattern" style="color:red;">The Address is not in the correct
+                          format!!! </small>
+                      </div>
+                    </div>
+
+
+                    <div class="form-outline">
+                      <label for="customerType" class="form-label">CustomerType:</label>
+                      <select id="customerType" formControlName="customerType" class="form-select text-primary">
+                        <option value="">-- Choosen---</option>
+                        <option *ngFor="let c of customerTypeList" [ngValue]="c">{{c.name}}</option>
+                      </select>
+                      <div *ngIf="!cus?.valid && (cus.customerType.dirty ||cus.customerType.touched)">
+                        <small *ngIf="cus.customerType.errors?.required" style="color:red;"> CustomerType is required! </small>
+                      </div>
+                    </div>
+
+                    <div class="row text-lg-center align-items-center justify-content-center">
+                      <small style="color: blue">Enter correctly to show the summit button!!!</small>
+                      <button class="btn btn-primary w-25 me-2" *ngIf="formCustomer.valid" type="submit">Submit</button>
+                      <button class="btn btn-primary w-25" type="reset">Reset</button>
                     </div>
                   </div>
                 </form>
