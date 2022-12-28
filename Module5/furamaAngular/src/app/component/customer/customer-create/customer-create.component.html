@@ -12,9 +12,9 @@
                   style="width: 90%;"/>
               </div>
               <div class="col-xl-6">
-                <form [formGroup]="formCustomer" (ngSubmit)="createCustomer()">
+                <form [formGroup]="formCustomerCreate" (ngSubmit)="createCustomer()">
                   <div class="card-body p-md-5 text-primary">
-                    <h3 class="mb-2 text-uppercase text-center">Create new Custom</h3>
+                    <h3 class="mb-2 text-uppercase text-center">Create new Customer</h3>
                     <hr>
                     <div class="form-outline">
                       <label class="form-label" for="name">CustomerName </label>
@@ -130,7 +130,7 @@
 
                     <div class="row text-lg-center align-items-center justify-content-center">
                       <small style="color: blue">Enter correctly to show the summit button!!!</small>
-                      <button class="btn btn-primary w-25 me-2" *ngIf="formCustomer.valid" type="submit">Submit</button>
+                      <button class="btn btn-primary w-25 me-2" *ngIf="formCustomerCreate.valid" type="submit">Submit</button>
                       <button class="btn btn-primary w-25" type="reset">Reset</button>
                     </div>
                   </div>

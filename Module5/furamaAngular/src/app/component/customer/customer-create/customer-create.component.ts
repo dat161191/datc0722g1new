@@ -8,7 +8,7 @@ import {CustomerType} from "../../../model/customer/CustomerType";
   styleUrls: ['./customer-create.component.css']
 })
 export class CustomerCreateComponent implements OnInit {
-  formCustomer: FormGroup;
+  formCustomerCreate: FormGroup;
   customerTypeList: CustomerType[]=[
     {
       id:1,
@@ -32,7 +32,7 @@ export class CustomerCreateComponent implements OnInit {
   ];
 
   constructor() {
-    this.formCustomer=new FormGroup({
+    this.formCustomerCreate=new FormGroup({
       id: new FormControl('',[Validators.required,Validators.pattern("[K][H][0-9]{4}")]),
       customerType: new FormControl('',Validators.required),
       name: new FormControl('',[Validators.required,Validators.pattern("([A-Z][a-z]+[ ])+([A-Z][a-z]+)")]),
@@ -45,12 +45,12 @@ export class CustomerCreateComponent implements OnInit {
     })
   }
   get cus(){
-    return this.formCustomer.controls
+    return this.formCustomerCreate.controls
   }
   ngOnInit(): void {
   }
 
   createCustomer() {
-    console.log(this.formCustomer.value)
+    console.log(this.formCustomerCreate.value)
   }
 }
