@@ -12,55 +12,39 @@
           <div class="col-8">
             <input type="email" name="email" id="email" formControlName="email">
             <div *ngIf="!regForm?.valid && (regForm.email.dirty ||regForm.email.touched)">
-              <div *ngIf="regForm.email.errors">
-                <div *ngIf="regForm.email.errors.required">
-                  <small style="color:red;"> Email is required! </small>
-                </div>
-                <div *ngIf="regForm.email.errors.email">
-                  <small style="color:red;"> Not format email! </small>
-                </div>
-              </div>
+              <small *ngIf="regForm.email.errors?.required" style="color:red;"> Email is required! </small>
+              <small *ngIf="regForm.email.errors?.email" style="color:red;"> Not format email! </small>
             </div>
           </div>
         </div>
 
-          <div class="row m-1 mb-1">
-            <div class="col-4">
-              <label for="password">Password</label>
-            </div>
-            <div class="col-8">
-              <input type="password" name="password" id="password" formControlName="password">
-              <div *ngIf="!regForm?.valid && (regForm.password.dirty ||regForm.password.touched)">
-                <div *ngIf="regForm.password.errors">
-                  <div *ngIf="regForm.password.errors.required">
-                    <small style="color:red;"> Password is required! </small>
-                  </div>
-                  <div *ngIf="regForm.password.errors.minlength">
-                    <small style="color:red;"> Min length is 6 </small>
-                  </div>
-                </div>
-              </div>
+        <div class="row m-1 mb-1">
+          <div class="col-4">
+            <label for="password">Password</label>
+          </div>
+          <div class="col-8">
+            <input type="password" name="password" id="password" formControlName="password">
+            <div *ngIf="!regForm?.valid && (regForm.password.dirty ||regForm.password.touched)">
+              <small *ngIf="regForm.password.errors?.required" style="color:red;"> Password is required! </small>
+              <small *ngIf="regForm.password.errors?.minlength" style="color:red;"> Min length is 6 </small>
             </div>
           </div>
+        </div>
 
-          <div class="row m-1 mb-1">
-            <div class="col-4">
-              <label for="confirmPassword">ConfirmPassword</label>
-            </div>
-            <div class="col-8">
-              <input type="password" name="confirmPassword" id="confirmPassword" formControlName="confirmPassword">
-              <div *ngIf="!regForm?.valid && (regForm.confirmPassword.dirty ||regForm.confirmPassword.touched)">
-                <div *ngIf="regForm.confirmPassword.errors">
-                  <div *ngIf="regForm.confirmPassword.errors.required">
-                    <small style="color:red;"> ConfirmPassword is required! </small>
-                  </div>
-                  <div *ngIf="regForm.confirmPassword.errors.checkPassword">
-                    <small style="color:red;"> ConfirmPassword didn't match </small>
-                  </div>
-                </div>
-              </div>
+        <div class="row m-1 mb-1">
+          <div class="col-4">
+            <label for="confirmPassword">ConfirmPassword</label>
+          </div>
+          <div class="col-8">
+            <input type="password" name="confirmPassword" id="confirmPassword" formControlName="confirmPassword">
+            <div *ngIf="!regForm?.valid && (regForm.confirmPassword.dirty ||regForm.confirmPassword.touched)">
+              <small *ngIf="regForm.confirmPassword.errors?.required" style="color:red;"> ConfirmPassword is
+                required! </small>
+              <small *ngIf="regForm.confirmPassword.errors?.checkPassword" style="color:red;"> ConfirmPassword didn't
+                match </small>
             </div>
           </div>
+        </div>
 
         <div class="row m-1 mb-1">
           <div class="col-4">
@@ -69,14 +53,10 @@
           <div class="col-8">
             <select id="country" formControlName="country" style="width: 100%;border-radius: 10px">
               <option value="">---Choosen---</option>
-              <option *ngFor="let c of countryList" [ngValue]="c.id">{{c.name}}</option>
+              <option *ngFor="let c of countryList" [ngValue]="c">{{c.name}}</option>
             </select>
             <div *ngIf="!regForm?.valid && (regForm.country.dirty ||regForm.country.touched)">
-              <div *ngIf="regForm.country.errors">
-                <div *ngIf="regForm.country.errors.required">
-                  <small style="color:red;"> Country is required! </small>
-                </div>
-              </div>
+              <small *ngIf="regForm.country.errors?.required" style="color:red;"> Country is required! </small>
             </div>
           </div>
         </div>
@@ -88,34 +68,22 @@
           <div class="col-8">
             <input type="number" min="16" max="60" name="age" id="age" formControlName="age">
             <div *ngIf="!regForm?.valid && (regForm.age.dirty ||regForm.age.touched)">
-              <div *ngIf="regForm.age.errors">
-                <div *ngIf="regForm.age.errors.required">
-                  <small style="color:red;"> Phone is required! </small>
-                </div>
-                <div *ngIf="regForm.age.errors.min">
-                  <small style="color:red;"> Min age is 18 </small>
-                </div>
-              </div>
+              <small *ngIf="regForm.age.errors?.required" style="color:red;"> Phone is required! </small>
+              <small *ngIf="regForm.age.errors?.min" style="color:red;"> Min age is 18 </small>
             </div>
           </div>
         </div>
+
         <div class="row m-1 mb-1">
           <div class="col-4">
             <label for="phone">Phone</label>
           </div>
           <div class="col-8">
             <input type="text" name="phone" id="phone" formControlName="phone">
-            <div *ngIf="!regForm?.valid && (regForm.phone.dirty ||regForm.phone.touched)">
-              <div *ngIf="regForm.phone.errors">
-                <div *ngIf="regForm.phone.errors.required">
-                  <small style="color:red;"> Phone is required! </small>
-                </div>
-                <div *ngIf="regForm.phone.errors.pattern">
-                  <small style="color:red;"> Not format phone </small>
-                </div>
-              </div>
+            <div c *ngIf="!regForm?.valid && (regForm.phone.dirty ||regForm.phone.touched)">
+              <small *ngIf="regForm.phone.errors?.required" style="color:red;"> Phone is required! </small>
+              <small *ngIf="regForm.phone.errors?.pattern" style="color:red;"> Not format phone </small>
             </div>
-
           </div>
         </div>
 
@@ -133,12 +101,8 @@
                 <label for="female">FeMale</label>
                 <input type="radio" style="width: 20px" value=false id="female" name="gender" formControlName="gender">
               </div>
-              <div *ngIf="!regForm?.valid && (regForm.gender.dirty ||regForm.gender.touched)">
-                <div *ngIf="regForm.gender.errors">
-                  <div *ngIf="regForm.gender.errors.required">
-                    <small style="color:red;"> Gender is required! </small>
-                  </div>
-                </div>
+              <div *ngIf="!regForm?.valid && (regForm.gender.dirty ||regForm.gender.touched||regForm.gender.pristine)">
+                <small *ngIf="regForm.gender.errors?.required" style="color:red;"> Gender is required! </small>
               </div>
             </div>
           </div>
@@ -146,7 +110,7 @@
         <hr>
 
         <div class="row text-lg-center align-items-center justify-content-center">
-          <small style="color: blue">Enter correctly to show the summit button (^ : ^)</small>
+          <small style="color: blue">Enter correctly to show the summit button!!!</small>
           <button class="btn btn-primary w-25 me-2" *ngIf="registerForm.valid" type="submit">Sumit</button>
           <button class="btn btn-primary w-25" type="reset">Reset</button>
         </div>

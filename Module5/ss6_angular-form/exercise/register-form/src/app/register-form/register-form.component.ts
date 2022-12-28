@@ -53,6 +53,5 @@ export class RegisterFormComponent implements OnInit {
         return matching.setErrors(null);
       }
     };
-
   }
 }
