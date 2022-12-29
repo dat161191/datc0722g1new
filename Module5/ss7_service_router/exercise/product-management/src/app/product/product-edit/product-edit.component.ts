@@ -19,7 +19,6 @@ export class ProductEditComponent implements OnInit {
       console.log(id);
       if (id != null) {
         this.product = this.productService.findById(parseInt(id));
-        console.log(this.product);
         this.productForm = new FormGroup(
           {
             id: new FormControl(this.product.id),
