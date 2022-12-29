@@ -9,7 +9,7 @@
                 <img
                   src="https://i.vietgiaitri.com/2021/9/6/tim-ve-mien-bien-tho-mong-bac-nhat-mien-trung-tai-khu-nghi-duong-furama-resort-da-nang-sang-chanh-9e6-6010593.jpg"
                   alt="Sample photo" class="img-fluid"
-                  style="width: 90%;"/>
+                  style="width: 75%;"/>
               </div>
               <div class="col-xl-6">
                 <form [formGroup]="formCustomerEdit" (ngSubmit)="editCustomer()">
@@ -27,16 +27,11 @@
                       </div>
                     </div>
 
-                    <div class="row">
+                    <div class="row" hidden>
                       <div class="col-md-6">
                         <div class="form-outline">
                           <label for="id">ID Customer</label>
-                          <input type="text" name="id" id="id" formControlName="id" class="form-control"/>
-                          <div *ngIf="!cus?.valid && (cus.id.dirty ||cus.id.touched)">
-                            <small *ngIf="cus.id.errors?.required" style="color:red;"> ID is required! </small>
-                            <small *ngIf="cus.id.errors?.pattern" style="color:red;">The ID is not in the correct
-                              format!!! </small>
-                          </div>
+                          <input type="text"  name="id" id="id" formControlName="id" class="form-control"/>
                         </div>
                       </div>
 

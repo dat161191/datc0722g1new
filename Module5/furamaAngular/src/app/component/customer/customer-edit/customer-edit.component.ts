@@ -33,7 +33,7 @@ export class CustomerEditComponent implements OnInit {
 
   constructor() {
     this.formCustomerEdit = new FormGroup({
-      id: new FormControl('', [Validators.required, Validators.pattern("[K][H][0-9]{4}")]),
+      id: new FormControl(''),
       customerType: new FormControl('', Validators.required),
       name: new FormControl('', [Validators.required, Validators.pattern("([A-Z][a-z]+[ ])+([A-Z][a-z]+)")]),
       dateOfBirth: new FormControl('', Validators.required),

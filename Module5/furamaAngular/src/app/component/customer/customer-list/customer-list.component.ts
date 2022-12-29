@@ -10,7 +10,7 @@ import {CustomerType} from "../../../model/customer/CustomerType";
 export class CustomerListComponent implements OnInit {
   customerList: Customer[] = [
     {
-      id : 1,
+      id : "KH-0001",
       customerType : {id:1,name:"Dimond"},
       name : "Trần Gia Gia",
       dateOfBirth : "1991/11/16",
@@ -21,7 +21,7 @@ export class CustomerListComponent implements OnInit {
       address : "Quảng Ngãi"
     },
     {
-      id : 2,
+      id : "KH-0002",
       customerType : {id:1,name:"Dimond"},
       name : "Nguyễn Thị Cẩm Vân",
       dateOfBirth : "1999/01/08",
@@ -32,7 +32,7 @@ export class CustomerListComponent implements OnInit {
       address : "Huế"
     },
     {
-      id : 3,
+      id : "KH-0003",
       customerType : {id:1,name:"Dimond"},
       name : "Lê Tạ Hà Phương",
       dateOfBirth : "06/06/1995",
@@ -43,7 +43,7 @@ export class CustomerListComponent implements OnInit {
       address : "Quảng Nam"
     },
     {
-      id : 4,
+      id : "KH-0004",
       customerType : {id:1,name:"Dimond"},
       name : "Đặng Phương Bảo",
       dateOfBirth : "1999-06-15",

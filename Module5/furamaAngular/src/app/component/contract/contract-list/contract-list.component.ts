@@ -17,9 +17,9 @@ export class ContractListComponent implements OnInit {
       startDate: "26/12/2022",
       endDate: "05/01/2023",
       deposit: 1000000,
-      employee: {id: 1, name: "Nguyễn Gia Hân"},
+      employee: {id: "NV-0001", name: "Nguyễn Gia Hân"},
       customer: {
-        id: 1,
+        id: 'KH-0001',
         customerType: {id: 1, name: "Dimond"},
         name: "Trần Gia Gia",
         dateOfBirth: "1991/11/16",
@@ -27,9 +27,10 @@ export class ContractListComponent implements OnInit {
         idCard: "212567097",
         phoneNumber: "0385425443",
         email: "shmily1611@gmail.com",
-        address: "Quảng Ngãi"},
+        address: "Quảng Ngãi"
+      },
       facility: {
-        id: 1,
+        id: "DV-001",
         name: "SuperVilla",
         area: 500,
         cost: 5000000,
@@ -47,9 +48,9 @@ export class ContractListComponent implements OnInit {
       startDate: "27/12/2022",
       endDate: "05/01/2023",
       deposit: 1000000,
-      employee: {id: 2, name: "Lý Phương"},
+      employee: {id: "NV-0002", name: "Lý Phương"},
       customer: {
-        id: 2,
+        id: 'KH-0002',
         customerType: {id: 1, name: "Dimond"},
         name: "Nguyễn Thị Cẩm Vân",
         dateOfBirth: "1999/01/08",
@@ -60,7 +61,7 @@ export class ContractListComponent implements OnInit {
         address: "Huế"
       },
       facility: {
-        id: 1,
+        id: "DV-001",
         name: "SuperVilla",
         area: 500,
         cost: 5000000,
@@ -78,9 +79,9 @@ export class ContractListComponent implements OnInit {
       startDate: "28/12/2022",
       endDate: "09/01/2023",
       deposit: 1000000,
-      employee: {id: 3, name: "Lê Long "},
+      employee: {id: "NV-0003", name: "Lê Long "},
       customer: {
-        id: 3,
+        id: 'KH-0003',
         customerType: {id: 1, name: "Dimond"},
         name: "Lê Tạ Hà Phương",
         dateOfBirth: "06/06/1995",
@@ -91,7 +92,7 @@ export class ContractListComponent implements OnInit {
         address: "Quảng Nam"
       },
       facility: {
-        id: 2,
+        id: "DV-002",
         name: "SuperHouse",
         area: 300,
         cost: 3000000,
@@ -108,9 +109,9 @@ export class ContractListComponent implements OnInit {
       startDate: "26/12/2022",
       endDate: "06/01/2023",
       deposit: 1000000,
-      employee: {id: 2, name: "Nguyễn Khang"},
+      employee: {id: "NV-0004", name: "Nguyễn Khang"},
       customer: {
-        id: 4,
+        id: 'KH-0004',
         customerType: {id: 1, name: "Dimond"},
         name: "Đặng Phương Bảo",
         dateOfBirth: "1999-06-15",
@@ -121,7 +122,7 @@ export class ContractListComponent implements OnInit {
         address: "Nha Trang"
       },
       facility: {
-        id: 3,
+        id: "DV-003",
         name: "SuperRoom",
         area: 500,
         cost: 1000000,

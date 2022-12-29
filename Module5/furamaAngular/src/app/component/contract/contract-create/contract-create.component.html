@@ -1,84 +1,106 @@
 <div class="row mb-1">
   <div class="col col-3"></div>
-  <div class="col-xl-6 bg-success">
-    <form action="" method="post">
+  <div class="col-xl-6 bg-secondary">
+    <form [formGroup]="contract" (ngSubmit)="createContract()">
       <div class="text-light">
-        <h3 class="mt-1 mb-2 text-uppercase text-center">Create new Contract</h3>
+        <h3 class="mt-1 mb-2 text-center">Create new Contract</h3>
+        <hr>
+        <div class="row mb-2">
+          <div class="col-3">
+            <label class="col col-3 form-labe " for="id">ID: </label>
+          </div>
+          <div class="col-9">
+            <input type="text" name="id" id="id" formControlName="id" class="form-control"/>
+            <div
+              *ngIf="!cont?.valid && (cont.id.dirty ||cont.id.touched)">
+              <small *ngIf="cont.id.errors?.required" style="color:red;"> ID is required! </small>
+            </div>
+          </div>
+        </div>
+
+        <div class="row mb-2">
+          <div class="col-3"><label class="form-label" for="customer">CustomerName:</label></div>
+          <div class="col-9">
+            <select id="customer" formControlName="customer" class="form-select text-primary">
+              <option value="">-- Choosen---</option>
+              <option *ngFor="let cus of customers" [ngValue]="cus">{{cus.name}}</option>
+            </select>
+            <div *ngIf="!cont?.valid && (cont.customer.dirty ||cont.customer.touched)">
+              <small *ngIf="cont.customer.errors?.required" style="color:red;"> CustomerName is required! </small>
+            </div>
+          </div>
+        </div>
+
+        <div class="row mb-2">
+          <div class="col-3"><label class="form-label" for="facility">FacilityName:</label></div>
+          <div class="col-9">
+            <select id="facility" formControlName="facility" class="form-select text-primary">
+              <option value="">-- Choosen---</option>
+              <option *ngFor="let fas of facilitys" [ngValue]="fas">{{fas.name}}</option>
+            </select>
+            <div *ngIf="!cont?.valid && (cont.facility.dirty ||cont.facility.touched)">
+              <small *ngIf="cont.facility.errors?.required" style="color:red;"> FacilityName is required! </small>
+            </div>
+          </div>
+        </div>
+
+        <div class="row mb-2">
+          <div class="col-3"><label class="form-label" for="employee">EmployeeName:</label></div>
+          <div class="col-9">
+            <select id="employee" formControlName="employee" class="form-select text-primary">
+              <option value="">-- Choosen---</option>
+              <option *ngFor="let emp of employees" [ngValue]="emp">{{emp.name}}</option>
+            </select>
+            <div *ngIf="!cont?.valid && (cont.employee.dirty ||cont.employee.touched)">
+              <small *ngIf="cont.employee.errors?.required" style="color:red;"> EmployeeName is required! </small>
+            </div>
+          </div>
+        </div>
+
+        <div class="row mb-2">
+          <div class="col-3">
+            <label class="col col-3 form-label " for="startDate">StartDate: </label>
+          </div>
+          <div class="col-9">
+            <input type="date" name="startDate" id="startDate" formControlName="startDate"
+                   class="form-control text-primary"/>
+            <div *ngIf="!cont?.valid && (cont.startDate.dirty ||cont.startDate.touched)">
+              <small *ngIf="cont.startDate.errors?.required" style="color:red;"> StartDate is required! </small>
+            </div>
+          </div>
+        </div>
+
+        <div class="row mb-2">
+          <div class="col-3">
+            <label class="col col-3 form-label " for="endDate">EndDate: </label>
+          </div>
+          <div class="col-9">
+            <input type="date" name="endDate" id="endDate" formControlName="endDate"
+                   class="form-control text-primary"/>
+            <div *ngIf="!cont?.valid && (cont.endDate.dirty ||cont.endDate.touched)">
+              <small *ngIf="cont.endDate.errors?.required" style="color:red;"> EndDate is required! </small>
+            </div>
+          </div>
+        </div>
+
+        <div class="row mb-2">
+          <div class="col-3">
+            <label class="col col-3 form-label " for="deposit">Deposit: </label>
+          </div>
+          <div class="col-9">
+            <input type="number" name="deposit" id="deposit" formControlName="deposit"
+                   class="form-control"/>
+            <div *ngIf="!cont?.valid && (cont.deposit.dirty ||cont.deposit.touched)">
+              <small *ngIf="cont.deposit.errors?.required" style="color:red;"> Deposit is required! </small>
+            </div>
+          </div>
+        </div>
         <hr>
 
-        <div class="row mb-2">
-          <div class="col-3"><label class="form-label" for="CustomerName">CustomerName:</label></div>
-          <div class="col-9">
-            <select class="form-select-lg text-primary w-100" id="CustomerName">
-              <option selected>-- Choosen---</option>
-              <option value="1">A</option>
-            </select>
-          </div>
-        </div>
-
-        <div class="row mb-2">
-          <div class="col-3"><label class="form-label" for="FacilityName">FacilityName:</label></div>
-          <div class="col-9">
-            <select class="form-select-lg text-primary w-100" id="FacilityName">
-              <option selected>-- Choosen---</option>
-              <option value="1">A</option>
-            </select>
-          </div>
-        </div>
-
-        <div class="row mb-2">
-          <div class="col-3"><label class="form-label" for="EmployeeName">EmployeeName:</label></div>
-          <div class="col-9">
-            <select class="form-select-lg text-primary w-100" id="EmployeeName">
-              <option selected>-- Choosen---</option>
-              <option value="1">A</option>
-            </select>
-          </div>
-        </div>
-
-        <div class="row mb-2">
-          <div class="col-3">
-            <label class="col col-3 form-labe " for="StartDate">StartDate: </label>
-          </div>
-          <div class="col-9">
-            <input type="date" id="StartDate"
-                   class="form-control form-control-lg text-primary"/>
-          </div>
-        </div>
-
-        <div class="row mb-2">
-          <div class="col-3">
-            <label class="col col-3 form-labe " for="EndDate">EndDate: </label>
-          </div>
-          <div class="col-9">
-            <input type="date" id="EndDate"
-                   class="form-control form-control-lg text-primary"/>
-          </div>
-        </div>
-
-        <div class="row mb-2">
-          <div class="col-3">
-            <label class="col col-3 form-labe " for="Deposit">Deposit: </label>
-          </div>
-          <div class="col-9">
-            <input type="text" id="Deposit"
-                   class="form-control form-control-lg text-primary"/>
-          </div>
-        </div>
-        <hr>
-
-        <div class="d-flex justify-content-center mb-1">
-          <table>
-            <tr>
-              <td>
-                <button type="submit" class="btn btn-primary"><b>Create Contract</b></button>
-              </td>
-              <td>
-                <a href="" class="btn btn-primary"><i
-                  class="bi bi-house-heart-fill"></i>Back To Contract List</a>
-              </td>
-            </tr>
-          </table>
+        <div class="row text-lg-center align-items-center justify-content-center">
+          <small style="color: blue">Enter correctly to show the summit button!!!</small>
+          <button class="btn btn-primary w-25 me-2" *ngIf="contract.valid" type="submit">Submit</button>
+          <button class="btn btn-primary w-25" type="reset">Reset</button>
         </div>
       </div>
     </form>

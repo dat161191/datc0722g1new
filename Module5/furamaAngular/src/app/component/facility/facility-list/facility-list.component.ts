@@ -9,7 +9,7 @@ import {Facility} from "../../../model/facility/Facility";
 export class FacilityListComponent implements OnInit {
   facilityList: Facility[] = [
     {
-      id: 1,
+      id: "DV-0001",
       name: "SuperVilla",
       area: 500,
       cost: 5000000,
@@ -22,7 +22,7 @@ export class FacilityListComponent implements OnInit {
       numberOfFloors: 5,
     },
     {
-      id: 2,
+      id: "DV-0002",
       name: "SuperHouse",
       area: 300,
       cost: 3000000,
@@ -34,7 +34,7 @@ export class FacilityListComponent implements OnInit {
       numberOfFloors: 2,
     },
     {
-      id: 3,
+      id: "DV-0003",
       name: "SuperRoom",
       area: 500,
       cost: 1000000,
@@ -45,7 +45,7 @@ export class FacilityListComponent implements OnInit {
       descriptionOtherConvenience: "Has 1 Ducati",
       facilityFree: "Massage Body",
     },{
-      id: 3,
+      id: "DV-0004",
       name: "SuperRoom",
       area: 500,
       cost: 1000000,
@@ -56,7 +56,7 @@ export class FacilityListComponent implements OnInit {
       descriptionOtherConvenience: "Has 1 Ducati",
       facilityFree: "Massage Body",
     },{
-      id: 3,
+      id: "DV-0005",
       name: "SuperRoom",
       area: 500,
       cost: 1000000,
@@ -67,7 +67,7 @@ export class FacilityListComponent implements OnInit {
       descriptionOtherConvenience: "Has 1 Ducati",
       facilityFree: "Massage Body",
     },{
-      id: 3,
+      id: "DV-0006",
       name: "SuperRoom",
       area: 500,
       cost: 1000000,
