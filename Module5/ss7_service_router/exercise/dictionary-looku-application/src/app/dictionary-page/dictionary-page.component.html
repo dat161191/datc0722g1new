@@ -1,0 +1,14 @@
+<h1>List Word</h1>
+<table>
+  <tr>
+    <td>STT</td>
+    <td>Word</td>
+    <td>Mean</td>
+  </tr>
+  <tr *ngFor="let dic of dictionarys; index as i">
+    <td>{{i + 1}}</td>
+    <td>{{dic.word}}</td>
+    <td><button type="button" [routerLink]="['/dictionary/info',dic.word]">Mean</button></td>
+  </tr>
+</table>
+<router-outlet></router-outlet>
