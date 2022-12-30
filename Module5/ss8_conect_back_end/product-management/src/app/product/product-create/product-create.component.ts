@@ -13,7 +13,6 @@ export class ProductCreateComponent implements OnInit {
   constructor(private productService: ProductService) {
     this.productForm = new FormGroup(
       {
-        id: new FormControl(),
         name: new FormControl(),
         price: new FormControl(),
         description: new FormControl(),
@@ -23,9 +22,13 @@ export class ProductCreateComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  submit() {
+  submit(): void {
     const product = this.productForm.value;
-    this.productService.saveProduct(product);
-    this.productForm.reset();
+    this.productService.saveProduct(product).subscribe(() => {
+      this.productForm.reset();
+      alert('Tạo thành công');
+    }, e => {
+      console.log(e);
+    });
   }
 }

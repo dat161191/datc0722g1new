@@ -10,7 +10,7 @@ let _id = 1;
   styleUrls: ['./todo.component.css']
 })
 export class TodoComponent implements OnInit {
-  todos: Todo[] = [];
+  todos: Todo[] = [{id: 1, content: 'Alo'},{id: 2, content: 'Ola'}];
   content = new FormControl();
 
   constructor() {

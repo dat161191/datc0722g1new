@@ -1,13 +1,23 @@
-<h1>Tạo danh mục mới</h1>
-<form [formGroup]="categoryForm" (ngSubmit)="submit()">
-  <table class="table">
-    <tr>
-      <td>Tên danh mục:</td>
-      <td><input type="text" formControlName="name"></td>
-    </tr>
-    <tr>
-      <td></td>
-      <td><button >Tạo mới</button></td>
-    </tr>
-  </table>
-</form>
+<div class="row">
+  <div class="col-4"></div>
+  <div class="col-4"><h1>Tạo danh mục mới</h1>
+    <form [formGroup]="categoryForm" (ngSubmit)="submit()">
+      <table class="table table-dark">
+        <thead></thead>
+        <tbody>
+        <tr>
+          <td>Tên danh mục:</td>
+          <td><input type="text" class="form-control" formControlName="name"></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>
+            <button class="btn bg-primary">Tạo mới</button>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+    </form>
+  </div>
+  <div class="col-4"></div>
+</div>

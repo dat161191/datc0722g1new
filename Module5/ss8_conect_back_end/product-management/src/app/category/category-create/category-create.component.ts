@@ -16,10 +16,10 @@ export class CategoryCreateComponent implements OnInit {
   constructor(private categoryService: CategoryService) {
   }
 
-  ngOnInit() {
+  ngOnInit(): void {
   }
 
-  submit() {
+  submit(): void {
     const category = this.categoryForm.value;
     this.categoryService.saveCategory(category).subscribe(() => {
       this.categoryForm.reset();
