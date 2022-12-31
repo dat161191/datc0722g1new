@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {Facility} from "../Facility";
+import {FacilityService} from "../service/facility.service";
 
 @Component({
   selector: 'app-facility-list',
@@ -10,17 +11,28 @@ export class FacilityListComponent implements OnInit {
   facilityList: Facility[] = [];
   temp: Facility = {};
 
-  constructor() {
+  constructor(private facilityService: FacilityService) {
   }
 
   ngOnInit(): void {
+    this.facilityService.getAll().subscribe(data => {
+      this.facilityList = data;
+    })
   }
 
-  sendId(id: string) {
+  sendId(id: any) {
+    this.facilityService.findById(id).subscribe(data => {
+      return this.temp = data;
+    }, error => {
+    }, () => {
+    })
 
   }
 
-  deleteFacility() {
-
+  deleteFacility(): void {
+    this.facilityService.deleteById(this.temp.id).subscribe(data => {
+      this.ngOnInit();
+      alert("Delete is Success!!!")
+    })
   }
 }

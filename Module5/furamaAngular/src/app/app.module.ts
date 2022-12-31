@@ -8,7 +8,7 @@ import {NavbarComponent} from './home/navbar/navbar.component';
 import {FooterComponent} from './home/footer/footer.component';
 import {FacilityListComponent} from './facility/facility-list/facility-list.component';
 import {FacilityEditComponent} from './facility/facility-edit/facility-edit.component';
-import {FuramaCreateComponent} from './facility/furama-create/furama-create.component';
+import {FaciltyCreateComponent} from './facility/facility-create/facilty-create.component';
 import {CustomerListComponent} from './customer/customer-list/customer-list.component';
 import {CustomerEditComponent} from './customer/customer-edit/customer-edit.component';
 import {CustomerCreateComponent} from './customer/customer-create/customer-create.component';
@@ -16,6 +16,7 @@ import {ContractListComponent} from './contract/contract-list/contract-list.comp
 import {ContractCreateComponent} from './contract/contract-create/contract-create.component';
 import {ReactiveFormsModule} from "@angular/forms";
 import {HttpClientModule} from "@angular/common/http";
+import { HomeComponent } from './home/home/home.component';
 
 @NgModule({
   declarations: [
@@ -25,12 +26,13 @@ import {HttpClientModule} from "@angular/common/http";
     FooterComponent,
     FacilityListComponent,
     FacilityEditComponent,
-    FuramaCreateComponent,
+    FaciltyCreateComponent,
     CustomerListComponent,
     CustomerEditComponent,
     CustomerCreateComponent,
     ContractListComponent,
     ContractCreateComponent,
+    HomeComponent,
   ],
   imports: [
     BrowserModule,

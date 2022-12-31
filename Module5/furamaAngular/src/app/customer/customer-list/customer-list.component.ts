@@ -12,13 +12,6 @@ import {Router} from "@angular/router";
 export class CustomerListComponent implements OnInit {
   customerList: Customer[] = [];
   temp: Customer = {}
-  customerType: CustomerType[] = [
-    {id: 1, name: "Diamond"},
-    {id: 2, name: "Platinum"},
-    {id: 3, name: "Gold"},
-    {id: 4, name: "Silver"},
-    {id: 5, name: "Member"},
-  ];
 
   constructor(private customerService: CustomerService, private router: Router) {
   }
@@ -26,6 +19,8 @@ export class CustomerListComponent implements OnInit {
   ngOnInit(): void {
     this.customerService.getAll().subscribe(customers => {
       this.customerList = customers;
+    }, error => {
+    }, () => {
     })
   }
 

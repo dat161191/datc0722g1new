@@ -5,10 +5,10 @@ import {RentType} from "../RentType";
 
 @Component({
   selector: 'app-furama-create',
-  templateUrl: './furama-create.component.html',
-  styleUrls: ['./furama-create.component.css']
+  templateUrl: './facility-create.component.html',
+  styleUrls: ['./facility-create.component.css']
 })
-export class FuramaCreateComponent implements OnInit {
+export class FaciltyCreateComponent implements OnInit {
   facilityCreate: FormGroup
   facilityTypes: FacilityType[] = [
     {id: 1, name: "Villa"},

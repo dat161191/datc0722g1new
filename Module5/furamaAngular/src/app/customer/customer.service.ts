@@ -18,11 +18,12 @@ export class CustomerService {
 
   }
 
-  deleteById(id: string | undefined): Observable<Customer> {
+  deleteById(id: number | undefined): Observable<Customer> {
     return this.http.delete<Customer>(this.URL + '/' + id);
   }
+
   findById(id: number): Observable<Customer> {
-    return this.http.get(this.URL + '/' + id);
+    return this.http.get<Customer>(this.URL + '/' + id);
   }
 
 }
