@@ -31,10 +31,17 @@ export class CustomerListComponent implements OnInit {
 
   sendId(id: any) {
     this.customerService.findById(id).subscribe(data => {
-      alert("Delele is Success!!!");
-      this.ngOnInit();
+      return this.temp = data;
     }, error => {
     }, () => {
     })
+  }
+
+  deleteProduct(): void {
+    this.customerService.deleteById(this.temp.id).subscribe(data => {
+      alert("Delele is Success!!!");
+      this.ngOnInit();
+    })
+
   }
 }
