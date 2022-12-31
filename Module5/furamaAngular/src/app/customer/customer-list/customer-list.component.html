@@ -28,7 +28,7 @@
       <tr class="text-danger" *ngFor="let customer of customerList;index as i">
         <th>{{i+1}}</th>
         <td>{{customer.name}}</td>
-        <td>{{customer.dateOfBirth|date:"dd/MM/yyyy"}}</td>
+        <td>{{customer.birthday|date:"dd/MM/yyyy"}}</td>
         <td>{{customer.gender?'Male':'Female'}}</td>
         <td>{{customer.idCard}}</td>
         <td>{{customer.phoneNumber}}</td>
@@ -36,13 +36,11 @@
         <td>{{customer.address}}</td>
         <td>{{customer.customerType?.name}}</td>
         <td>
-          <button class="btn btn-primary" type="button" data-bs-toggle="modal"
-                  data-bs-target="#exampleModalEdit"> Edit
-          </button>
+          <button type="button" class="btn btn-outline-danger" [routerLink]="['/product/edit',customer.id]">Edit</button>
         </td>
         <td>
-          <button type="button" class="btn btn-primary" data-bs-toggle="modal"
-                  data-bs-target="#exampleModal">Delete
+          <button type="button" class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#exampleModal"
+                  (click)="sendId(customer.id)"> Delete
           </button>
         </td>
       <tr>

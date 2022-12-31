@@ -1,15 +1,15 @@
 import {Component, OnInit} from '@angular/core';
 import {FormControl, FormGroup, Validators} from "@angular/forms";
-import {FacilityType} from "../../../model/facility/FacilityType";
-import {RentType} from "../../../model/facility/RentType";
+import {FacilityType} from "../FacilityType";
+import {RentType} from "../RentType";
 
 @Component({
-  selector: 'app-facility-edit',
-  templateUrl: './facility-edit.component.html',
-  styleUrls: ['./facility-edit.component.css']
+  selector: 'app-furama-create',
+  templateUrl: './furama-create.component.html',
+  styleUrls: ['./furama-create.component.css']
 })
-export class FacilityEditComponent implements OnInit {
-  facilityEdit: FormGroup
+export class FuramaCreateComponent implements OnInit {
+  facilityCreate: FormGroup
   facilityTypes: FacilityType[] = [
     {id: 1, name: "Villa"},
     {id: 2, name: "House"}
@@ -22,9 +22,9 @@ export class FacilityEditComponent implements OnInit {
   ]
 
   constructor() {
-    this.facilityEdit = new FormGroup(
+    this.facilityCreate = new FormGroup(
       {
-        id: new FormControl(''),
+        id: new FormControl('', [Validators.required, Validators.pattern('[D][V][-][0-9]{4}')]),
         name: new FormControl('', Validators.required),
         area: new FormControl('', Validators.required),
         cost: new FormControl('', Validators.required),
@@ -41,13 +41,13 @@ export class FacilityEditComponent implements OnInit {
   }
 
   get faci() {
-    return this.facilityEdit.controls
+    return this.facilityCreate.controls
   }
 
   ngOnInit(): void {
   }
 
-  editFacility() {
-    console.log(this.facilityEdit.value)
+  createFacility() {
+    console.log(this.facilityCreate.value)
   }
 }
