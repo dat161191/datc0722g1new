@@ -1,5 +1,180 @@
 {
-  "customer": [],
+  "customer": [
+    {
+      "id": 2,
+      "customerCode": "KH-1111",
+      "customerType": {
+        "id": 2,
+        "name": "Platinum"
+      },
+      "name": "San San",
+      "dateOfBirth": "1992-08-08",
+      "idCard": "865342123",
+      "phoneNumber": "0901234567",
+      "gender": false,
+      "email": "xuandieu92@gmail.com",
+      "address": "K77/22 Thái Phiên, Quảng Trị",
+      "flagDelete": false
+    },
+    {
+      "id": 3,
+      "customerCode": "KH-0012",
+      "customerType": {
+        "id": 1,
+        "name": "Diamond"
+      },
+      "name": "Su Su",
+      "dateOfBirth": "1990-02-27",
+      "idCard": "488645199",
+      "phoneNumber": "0903213122",
+      "gender": false,
+      "email": "nghenhan2702@gmail.com",
+      "address": "K323/12 Ông Ích Khiêm, Vinh",
+      "flagDelete": false
+    },
+    {
+      "id": 4,
+      "customerCode": "KH-1111",
+      "customerType": {
+        "id": 1,
+        "name": "Diamond"
+      },
+      "name": "Quan Quan",
+      "dateOfBirth": "1981-07-08",
+      "idCard": "543432111",
+      "phoneNumber": "0901234567",
+      "gender": true,
+      "email": "duongquan@gmail.com",
+      "address": "K453/12 Lê Lợi, Đà Nẵng",
+      "flagDelete": false
+    },
+    {
+      "id": 5,
+      "customerCode": "KH-1111",
+      "customerType": {
+        "id": 1,
+        "name": "Diamond"
+      },
+      "name": "Song Song",
+      "dateOfBirth": "1995-12-09",
+      "idCard": "795453345",
+      "phoneNumber": "0901234567",
+      "gender": false,
+      "email": "nhinhi123@gmail.com",
+      "address": "224 Lý Thái Tổ, Gia Lai",
+      "flagDelete": false
+    },
+    {
+      "id": 6,
+      "customerCode": "KH-1111",
+      "customerType": {
+        "id": 1,
+        "name": "Diamond"
+      },
+      "name": "Cha Cha",
+      "dateOfBirth": "2005-12-02",
+      "idCard": "732434215",
+      "phoneNumber": "0901234567",
+      "gender": false,
+      "email": "tonnuchau@gmail.com",
+      "address": "37 Yên Thế, Đà Nẵng",
+      "flagDelete": false
+    },
+    {
+      "id": 7,
+      "customerCode": "KH-1111",
+      "customerType": {
+        "id": 1,
+        "name": "Diamond"
+      },
+      "name": "Kim Kim",
+      "dateOfBirth": "1984-04-08",
+      "idCard": "856453123",
+      "phoneNumber": "0901234567",
+      "gender": false,
+      "email": "kimcuong84@gmail.com",
+      "address": "K123/45 Lê Lợi, Hồ Chí Minh",
+      "flagDelete": false
+    },
+    {
+      "id": 8,
+      "customerCode": "KH-1112",
+      "customerType": {
+        "id": 2,
+        "name": "Platinum"
+      },
+      "name": "An An",
+      "dateOfBirth": "1999-04-08",
+      "idCard": "965656433",
+      "phoneNumber": "0901234567",
+      "gender": true,
+      "email": "haohao99@gmail.com",
+      "address": "55 Nguyễn Văn Linh, Kon Tum",
+      "flagDelete": false
+    },
+    {
+      "id": 9,
+      "customerCode": "KH-1111",
+      "customerType": {
+        "id": 2,
+        "name": "Platinum"
+      },
+      "name": "Vo Danh",
+      "dateOfBirth": "1994-07-01",
+      "idCard": "432341234",
+      "phoneNumber": "0643343433",
+      "gender": true,
+      "email": "danhhai99@gmail.com",
+      "address": "24 Lý Thường Kiệt, Quảng Ngãi",
+      "flagDelete": false
+    },
+    {
+      "id": 10,
+      "customerCode": "KH-1111",
+      "customerType": {
+        "id": 3,
+        "name": "Gold"
+      },
+      "name": "Nguyễn Tâm Đắc",
+      "dateOfBirth": "1989-07-01",
+      "idCard": "344343432",
+      "phoneNumber": "0987654321",
+      "gender": true,
+      "email": "dactam@gmail.com",
+      "address": "22 Ngô Quyền, Đà Nẵng",
+      "flagDelete": false
+    },
+    {
+      "customerCode": "KH-1001",
+      "customerType": {
+        "id": 1,
+        "name": "Diamond"
+      },
+      "name": "Sam Sam",
+      "dateOfBirth": "2023-01-11",
+      "gender": true,
+      "idCard": "123456789",
+      "phoneNumber": "0901234567",
+      "email": "quocdat.tran453@gmail.com",
+      "address": "Quảng Ngãi",
+      "id": 1
+    },
+    {
+      "customerCode": "KH-1001",
+      "customerType": {
+        "id": 2,
+        "name": "Platinum"
+      },
+      "name": "San San",
+      "dateOfBirth": "2023-01-06",
+      "gender": false,
+      "idCard": "965656433",
+      "phoneNumber": "0901234567",
+      "email": "quocdat.tran453@gmail.com",
+      "address": "K77/22 Thái Phiên, Quảng Trị",
+      "id": 12
+    }
+  ],
   "customerTypes": [
     {
       "id": 1,
@@ -119,7 +294,8 @@
         "id": 3,
         "name": "day"
       }
-    },{
+    },
+    {
       "id": 6,
       "facilityCode": "DV-0006",
       "name": "Room Twin 02",

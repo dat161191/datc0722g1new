@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {Customer} from "../Customer";
 import {CustomerType} from "../CustomerType";
-import {CustomerService} from "../customer.service";
+import {CustomerService} from "../service/customer.service";
 import {Router} from "@angular/router";
 
 @Component({
@@ -13,12 +13,13 @@ export class CustomerListComponent implements OnInit {
   customerList: Customer[] = [];
   temp: Customer = {}
 
+
   constructor(private customerService: CustomerService, private router: Router) {
   }
 
   ngOnInit(): void {
-    this.customerService.getAll().subscribe(customers => {
-      this.customerList = customers;
+    this.customerService.getAll().subscribe(data => {
+      this.customerList = data;
     }, error => {
     }, () => {
     })
@@ -39,4 +40,6 @@ export class CustomerListComponent implements OnInit {
     })
 
   }
+
+
 }

@@ -8,8 +8,7 @@
         <thead>
         <tr>
           <th colspan="11"><h3>CustomerList</h3>
-            <button class="btn btn-primary" type="button" data-bs-toggle="modal"
-                    data-bs-target="#exampleModalEdit"> Create new Customer
+            <button class="btn btn-primary" type="button" [routerLink]="['/customer/create']"> Create new Customer
             </button>
           </th>
         </tr>
@@ -26,7 +25,8 @@
         </tr>
         </thead>
         <tbody>
-        <tr class="text-danger" *ngFor="let customer of customerList;index as i">
+        <tr class="text-danger"
+            *ngFor="let customer of customerList;index as i ">
           <th>{{i + 1}}</th>
           <td>{{customer.name}}</td>
           <td>{{customer.customerCode}}</td>
