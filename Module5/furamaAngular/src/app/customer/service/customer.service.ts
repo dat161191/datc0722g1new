@@ -7,34 +7,36 @@ import {Customer} from "../Customer";
   providedIn: 'root'
 })
 export class CustomerService {
-  URL = 'http://localhost:3000/customer';
+  URLCTM = 'http://localhost:3000/customer';
 
 
   constructor(private http: HttpClient) {
-    this.getAll();
-
   }
 
-  getAll(): Observable<Customer[]> {
-    return this.http.get<Customer[]>(this.URL)
-
+  getAll(searKey: any = null): Observable<Customer[]> {
+    let urlSearh = this.URLCTM;
+    if (searKey != null) {
+      urlSearh += '?name_like=' + searKey;
+    }
+    // console.log(urlSearh)
+    return this.http.get<Customer[]>(urlSearh)
   }
 
 
   deleteById(id: number | undefined): Observable<Customer> {
-    return this.http.delete<Customer>(this.URL + '/' + id);
+    return this.http.delete<Customer>(this.URLCTM + '/' + id);
   }
 
   findById(id: number): Observable<Customer> {
-    return this.http.get<Customer>(this.URL + '/' + id);
+    return this.http.get<Customer>(this.URLCTM + '/' + id);
   }
 
   saveCustomer(customer: Customer): Observable<Customer> {
-    return this.http.post<Customer>(this.URL, customer);
+    return this.http.post<Customer>(this.URLCTM, customer);
   }
 
   editCustomer(id: number, customer: Customer): Observable<Customer> {
-    return this.http.patch<Customer>(this.URL + '/' + id, customer);
+    return this.http.patch<Customer>(this.URLCTM + '/' + id, customer);
   }
 
 }

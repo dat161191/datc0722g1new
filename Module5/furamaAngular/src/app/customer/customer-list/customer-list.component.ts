@@ -1,8 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {Customer} from "../Customer";
-import {CustomerType} from "../CustomerType";
 import {CustomerService} from "../service/customer.service";
 import {Router} from "@angular/router";
+import {FormControl, FormGroup} from "@angular/forms";
 
 @Component({
   selector: 'app-customer-list',
@@ -11,8 +11,9 @@ import {Router} from "@angular/router";
 })
 export class CustomerListComponent implements OnInit {
   customerList: Customer[] = [];
-  temp: Customer = {}
-
+  searchCustomer: FormGroup = new FormGroup({name: new FormControl()});
+  temp: Customer = {};
+  p: number = 1;
 
   constructor(private customerService: CustomerService, private router: Router) {
   }
@@ -25,21 +26,21 @@ export class CustomerListComponent implements OnInit {
     })
   }
 
-  sendId(id: any) {
-    this.customerService.findById(id).subscribe(data => {
-      return this.temp = data;
-    }, error => {
-    }, () => {
-    })
-  }
 
   deleteProduct(): void {
     this.customerService.deleteById(this.temp.id).subscribe(data => {
       alert("Delele is Success!!!");
       this.ngOnInit();
     })
-
   }
 
 
+  onSearch() {
+    console.log(this.searchCustomer.value.name)
+    this.customerService.getAll(this.searchCustomer.value.name).subscribe(data => {
+      this.customerList = data;
+    }, error => {
+    }, () => {
+    });
+  }
 }

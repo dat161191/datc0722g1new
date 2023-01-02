@@ -1,11 +1,8 @@
 import {Component, OnInit} from '@angular/core';
-import {ContractDetail} from "../ContractDetail";
-import {Employee} from "../../employee/Employee";
-import {Customer} from "../../customer/Customer";
-import {Facility} from "../../facility/Facility";
 import {Contract} from "../Contract";
 import {ContractService} from "../contract.service";
 import {Router} from "@angular/router";
+import {FormControl, FormGroup} from "@angular/forms";
 
 @Component({
   selector: 'app-contract-list',
@@ -15,6 +12,7 @@ import {Router} from "@angular/router";
 export class ContractListComponent implements OnInit {
   contractList: Contract[] = [];
   temp: Contract = {};
+  searchContract: FormGroup = new FormGroup({name: new FormControl()});
 
   constructor(private contractService: ContractService, private router: Router) {
   }
@@ -26,16 +24,18 @@ export class ContractListComponent implements OnInit {
   }
 
 
-  sendId(id: any) {
-    this.contractService.findById(id).subscribe(data => {
-      return this.temp = data;
-    })
-  }
-
   deleteProduct() {
     this.contractService.deleteById(this.temp.id).subscribe(data => {
       alert("Delele is Success!!!");
       this.ngOnInit();
     })
+  }
+
+  onSearch() {
+    this.contractService.getAll(this.searchContract.value.name).subscribe(data => {
+      this.contractList = data;
+    }, error => {
+    }, () => {
+    });
   }
 }

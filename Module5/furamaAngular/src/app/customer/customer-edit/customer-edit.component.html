@@ -131,9 +131,8 @@
 
                     <div class="form-outline">
                       <label for="customerType" class="form-label">CustomerType:</label>
-                      <select id="customerType" formControlName="customerType" class="form-select text-primary">
-                        <option value="">-- Choosen---</option>
-                        <option *ngFor="let c of customerTypeList" [ngValue]="c">{{c.name}}</option>
+                      <select  [compareWith]="compareWith" id="customerType" formControlName="customerType" class="form-select text-primary">
+                        <option *ngFor="let c of customerTypeList"  [ngValue]="c">{{c.name}}</option>
                       </select>
                       <div *ngIf="!cus?.valid && (cus.customerType.dirty ||cus.customerType.touched)">
                         <small *ngIf="cus.customerType.errors?.required" style="color:red;"> CustomerType is

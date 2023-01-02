@@ -7,21 +7,34 @@ import {Observable} from "rxjs";
   providedIn: 'root'
 })
 export class ContractService {
-  URL = 'http://localhost:3000/contracts'
+  URLCT = 'http://localhost:3000/contracts'
 
   constructor(private http: HttpClient) {
-    this.getAll();
   }
 
-  getAll(): Observable<Contract[]> {
-    return this.http.get<Contract[]>(this.URL);
+  getAll(searchKey: any = null): Observable<Contract[]> {
+    let urlSearch = this.URLCT;
+    if (searchKey != null) {
+      urlSearch += '?name_like=' + searchKey
+    }
+    console.log(urlSearch)
+    return this.http.get<Contract[]>(urlSearch);
   }
 
   findById(id: number): Observable<Contract> {
-    return this.http.get<Contract>(this.URL + '/' + id);
+    return this.http.get<Contract>(this.URLCT + '/' + id);
   }
 
   deleteById(id: number | undefined): Observable<Contract> {
-    return this.http.get<Contract>(this.URL + '/' + id);
+    return this.http.delete<Contract>(this.URLCT + '/' + id);
+  }
+
+  save(contract: Contract): Observable<Contract> {
+    return this.http.post<any>(this.URLCT, contract);
+  }
+
+  edit(id: number, contract: Contract): Observable<Contract> {
+    console.log(contract)
+    return this.http.patch<Contract>(this.URLCT + '/' + id, contract);
   }
 }

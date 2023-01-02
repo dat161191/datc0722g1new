@@ -1,4 +1,18 @@
 {
+  "employee": [
+    {
+      "id": 1,
+      "name": "Pin"
+    },
+    {
+      "id": 2,
+      "name": "Pon"
+    },
+    {
+      "id": 3,
+      "name": "Pan"
+    }
+  ],
   "customer": [
     {
       "id": 2,
@@ -14,7 +28,50 @@
       "gender": false,
       "email": "xuandieu92@gmail.com",
       "address": "K77/22 Thái Phiên, Quảng Trị",
-      "flagDelete": false
+      "flagDelete": false,
+      "startDate": "2020-07-14",
+      "endDate": "2020-07-21",
+      "deposit": 200000,
+      "employee": {
+        "id": 2,
+        "name": "Pon"
+      },
+      "customer": {
+        "id": 2,
+        "customerCode": "KH-1111",
+        "customerType": {
+          "id": 2,
+          "name": "Platinum"
+        },
+        "name": "San San",
+        "dateOfBirth": "1992-08-08",
+        "idCard": "865342123",
+        "phoneNumber": "0901234567",
+        "gender": false,
+        "email": "xuandieu92@gmail.com",
+        "address": "K77/22 Thái Phiên, Quảng Trị",
+        "flagDelete": false
+      },
+      "facility": {
+        "id": 1,
+        "facilityCode": "DV-0001",
+        "name": "Villa Beach Front",
+        "area": 250,
+        "cost": 1000000,
+        "maxPeople": 10,
+        "standardRoom": "vip",
+        "descriptionOtherConvenience": "Có hồ bơi",
+        "poolArea": 50,
+        "numberOfFloors": 4,
+        "facilityType": {
+          "id": 1,
+          "name": "Villa"
+        },
+        "rentType": {
+          "id": 3,
+          "name": "day"
+        }
+      }
     },
     {
       "id": 3,
@@ -23,14 +80,98 @@
         "id": 1,
         "name": "Diamond"
       },
-      "name": "Su Su",
+      "name": "Mi Mi",
       "dateOfBirth": "1990-02-27",
       "idCard": "488645199",
       "phoneNumber": "0903213122",
       "gender": false,
       "email": "nghenhan2702@gmail.com",
       "address": "K323/12 Ông Ích Khiêm, Vinh",
-      "flagDelete": false
+      "flagDelete": false,
+      "startDate": "2021-03-15",
+      "endDate": "2021-03-17",
+      "deposit": 50000,
+      "employee": {
+        "id": 1,
+        "name": "Pin"
+      },
+      "customer": {
+        "id": 3,
+        "customerCode": "KH-0012",
+        "customerType": {
+          "id": 1,
+          "name": "Diamond"
+        },
+        "name": "CT-0003",
+        "dateOfBirth": "1990-02-27",
+        "idCard": "488645199",
+        "phoneNumber": "0903213122",
+        "gender": false,
+        "email": "nghenhan2702@gmail.com",
+        "address": "K323/12 Ông Ích Khiêm, Vinh",
+        "flagDelete": false,
+        "startDate": "2021-03-15",
+        "endDate": "2021-03-17",
+        "deposit": 50001,
+        "employee": {
+          "id": 3,
+          "name": "Pan"
+        },
+        "customer": {
+          "id": 2,
+          "customerCode": "KH-1111",
+          "customerType": {
+            "id": 2,
+            "name": "Platinum"
+          },
+          "name": "San San",
+          "dateOfBirth": "1992-08-08",
+          "idCard": "865342123",
+          "phoneNumber": "0901234567",
+          "gender": false,
+          "email": "xuandieu92@gmail.com",
+          "address": "K77/22 Thái Phiên, Quảng Trị",
+          "flagDelete": false
+        },
+        "facility": {
+          "id": 6,
+          "facilityCode": "DV-0006",
+          "name": "Room Twin 02",
+          "area": 30,
+          "cost": 900000,
+          "maxPeople": 2,
+          "standardRoom": "normal",
+          "descriptionOtherConvenience": "Có tivi",
+          "facilityFree": "1 xe máy",
+          "facilityType": {
+            "id": 3,
+            "name": "Room"
+          },
+          "rentType": {
+            "id": 4,
+            "name": "hour"
+          }
+        }
+      },
+      "facility": {
+        "id": 2,
+        "facilityCode": "DV-0002",
+        "name": "House Princess 01",
+        "area": 140,
+        "cost": 5000000,
+        "maxPeople": 7,
+        "standardRoom": "vip",
+        "descriptionOtherConvenience": "Có thêm bếp nướng",
+        "numberOfFloors": 3,
+        "facilityType": {
+          "id": 2,
+          "name": "House"
+        },
+        "rentType": {
+          "id": 1,
+          "name": "year"
+        }
+      }
     },
     {
       "id": 4,
@@ -71,14 +212,57 @@
         "id": 1,
         "name": "Diamond"
       },
-      "name": "Cha Cha",
+      "name": "Nana Na",
       "dateOfBirth": "2005-12-02",
       "idCard": "732434215",
       "phoneNumber": "0901234567",
       "gender": false,
       "email": "tonnuchau@gmail.com",
       "address": "37 Yên Thế, Đà Nẵng",
-      "flagDelete": false
+      "flagDelete": false,
+      "startDate": "2023-01-03",
+      "endDate": "2023-01-03",
+      "deposit": 5,
+      "employee": {
+        "id": 1,
+        "name": "Pin"
+      },
+      "customer": {
+        "id": 2,
+        "customerCode": "KH-1111",
+        "customerType": {
+          "id": 2,
+          "name": "Platinum"
+        },
+        "name": "San San",
+        "dateOfBirth": "1992-08-08",
+        "idCard": "865342123",
+        "phoneNumber": "0901234567",
+        "gender": false,
+        "email": "xuandieu92@gmail.com",
+        "address": "K77/22 Thái Phiên, Quảng Trị",
+        "flagDelete": false
+      },
+      "facility": {
+        "id": 1,
+        "facilityCode": "DV-0001",
+        "name": "Villa Beach Front",
+        "area": 250,
+        "cost": 1000000,
+        "maxPeople": 10,
+        "standardRoom": "vip",
+        "descriptionOtherConvenience": "Có hồ bơi",
+        "poolArea": 50,
+        "numberOfFloors": 4,
+        "facilityType": {
+          "id": 1,
+          "name": "Villa"
+        },
+        "rentType": {
+          "id": 3,
+          "name": "day"
+        }
+      }
     },
     {
       "id": 7,
@@ -87,14 +271,57 @@
         "id": 1,
         "name": "Diamond"
       },
-      "name": "Kim Kim",
+      "name": "Li Li",
       "dateOfBirth": "1984-04-08",
       "idCard": "856453123",
       "phoneNumber": "0901234567",
       "gender": false,
       "email": "kimcuong84@gmail.com",
       "address": "K123/45 Lê Lợi, Hồ Chí Minh",
-      "flagDelete": false
+      "flagDelete": false,
+      "startDate": "2023-01-03",
+      "endDate": "2023-01-25",
+      "deposit": 6,
+      "employee": {
+        "id": 1,
+        "name": "Pin"
+      },
+      "customer": {
+        "id": 2,
+        "customerCode": "KH-1111",
+        "customerType": {
+          "id": 2,
+          "name": "Platinum"
+        },
+        "name": "San San",
+        "dateOfBirth": "1992-08-08",
+        "idCard": "865342123",
+        "phoneNumber": "0901234567",
+        "gender": false,
+        "email": "xuandieu92@gmail.com",
+        "address": "K77/22 Thái Phiên, Quảng Trị",
+        "flagDelete": false
+      },
+      "facility": {
+        "id": 1,
+        "facilityCode": "DV-0001",
+        "name": "Villa Beach Front",
+        "area": 250,
+        "cost": 1000000,
+        "maxPeople": 10,
+        "standardRoom": "vip",
+        "descriptionOtherConvenience": "Có hồ bơi",
+        "poolArea": 50,
+        "numberOfFloors": 4,
+        "facilityType": {
+          "id": 1,
+          "name": "Villa"
+        },
+        "rentType": {
+          "id": 3,
+          "name": "day"
+        }
+      }
     },
     {
       "id": 8,
@@ -122,26 +349,10 @@
       "name": "Vo Danh",
       "dateOfBirth": "1994-07-01",
       "idCard": "432341234",
-      "phoneNumber": "0643343433",
-      "gender": true,
+      "phoneNumber": "0901234567",
+      "gender": false,
       "email": "danhhai99@gmail.com",
       "address": "24 Lý Thường Kiệt, Quảng Ngãi",
-      "flagDelete": false
-    },
-    {
-      "id": 10,
-      "customerCode": "KH-1111",
-      "customerType": {
-        "id": 3,
-        "name": "Gold"
-      },
-      "name": "Nguyễn Tâm Đắc",
-      "dateOfBirth": "1989-07-01",
-      "idCard": "344343432",
-      "phoneNumber": "0987654321",
-      "gender": true,
-      "email": "dactam@gmail.com",
-      "address": "22 Ngô Quyền, Đà Nẵng",
       "flagDelete": false
     },
     {
@@ -158,21 +369,6 @@
       "email": "quocdat.tran453@gmail.com",
       "address": "Quảng Ngãi",
       "id": 1
-    },
-    {
-      "customerCode": "KH-1001",
-      "customerType": {
-        "id": 2,
-        "name": "Platinum"
-      },
-      "name": "San San",
-      "dateOfBirth": "2023-01-06",
-      "gender": false,
-      "idCard": "965656433",
-      "phoneNumber": "0901234567",
-      "email": "quocdat.tran453@gmail.com",
-      "address": "K77/22 Thái Phiên, Quảng Trị",
-      "id": 12
     }
   ],
   "customerTypes": [
@@ -350,17 +546,49 @@
   "contracts": [
     {
       "id": 1,
-      "name": "CT-0001",
+      "name": "CT-00011212",
       "startDate": "2020-12-08",
       "endDate": "2020-12-08",
-      "deposit": 0,
+      "deposit": 3,
       "customer": {
-        "id": 1,
-        "name": "Nguyễn Thị Hào"
+        "id": 4,
+        "customerCode": "KH-1111",
+        "customerType": {
+          "id": 1,
+          "name": "Diamond"
+        },
+        "name": "Quan Quan",
+        "dateOfBirth": "1981-07-08",
+        "idCard": "543432111",
+        "phoneNumber": "0901234567",
+        "gender": true,
+        "email": "duongquan@gmail.com",
+        "address": "K453/12 Lê Lợi, Đà Nẵng",
+        "flagDelete": false
       },
       "facility": {
-        "id": 3,
-        "name": "Room Twin 01"
+        "id": 1,
+        "facilityCode": "DV-0001",
+        "name": "Villa Beach Front",
+        "area": 250,
+        "cost": 1000000,
+        "maxPeople": 10,
+        "standardRoom": "vip",
+        "descriptionOtherConvenience": "Có hồ bơi",
+        "poolArea": 50,
+        "numberOfFloors": 4,
+        "facilityType": {
+          "id": 1,
+          "name": "Villa"
+        },
+        "rentType": {
+          "id": 3,
+          "name": "day"
+        }
+      },
+      "employee": {
+        "id": 1,
+        "name": "Pin"
       }
     },
     {
@@ -370,12 +598,86 @@
       "endDate": "2020-07-21",
       "deposit": 200000,
       "customer": {
-        "id": 3,
-        "name": "Trương Đình Nghệ"
+        "id": 2,
+        "customerCode": "KH-1111",
+        "customerType": {
+          "id": 2,
+          "name": "Platinum"
+        },
+        "name": "alo",
+        "dateOfBirth": "1992-08-08",
+        "idCard": "865342123",
+        "phoneNumber": "0901234567",
+        "gender": false,
+        "email": "xuandieu92@gmail.com",
+        "address": "K77/22 Thái Phiên, Quảng Trị",
+        "flagDelete": false,
+        "startDate": "2020-07-14",
+        "endDate": "2020-07-21",
+        "deposit": 200000,
+        "employee": {
+          "id": 2,
+          "name": "Pon"
+        },
+        "customer": {
+          "id": 2,
+          "customerCode": "KH-1111",
+          "customerType": {
+            "id": 2,
+            "name": "Platinum"
+          },
+          "name": "San San",
+          "dateOfBirth": "1992-08-08",
+          "idCard": "865342123",
+          "phoneNumber": "0901234567",
+          "gender": false,
+          "email": "xuandieu92@gmail.com",
+          "address": "K77/22 Thái Phiên, Quảng Trị",
+          "flagDelete": false
+        },
+        "facility": {
+          "id": 1,
+          "facilityCode": "DV-0001",
+          "name": "Villa Beach Front",
+          "area": 250,
+          "cost": 1000000,
+          "maxPeople": 10,
+          "standardRoom": "vip",
+          "descriptionOtherConvenience": "Có hồ bơi",
+          "poolArea": 50,
+          "numberOfFloors": 4,
+          "facilityType": {
+            "id": 1,
+            "name": "Villa"
+          },
+          "rentType": {
+            "id": 3,
+            "name": "day"
+          }
+        }
       },
       "facility": {
+        "id": 2,
+        "facilityCode": "DV-0002",
+        "name": "House Princess 01",
+        "area": 140,
+        "cost": 5000000,
+        "maxPeople": 7,
+        "standardRoom": "vip",
+        "descriptionOtherConvenience": "Có thêm bếp nướng",
+        "numberOfFloors": 3,
+        "facilityType": {
+          "id": 2,
+          "name": "House"
+        },
+        "rentType": {
+          "id": 1,
+          "name": "year"
+        }
+      },
+      "employee": {
         "id": 1,
-        "name": "Villa Beach Front"
+        "name": "Pin"
       }
     },
     {
@@ -407,6 +709,100 @@
         "id": 5,
         "name": "House Princess 02"
       }
+    },
+    {
+      "name": "CT-0012",
+      "startDate": "2023-01-03",
+      "endDate": "2023-01-03",
+      "deposit": 5,
+      "employee": {
+        "id": 1,
+        "name": "Pin"
+      },
+      "customer": {
+        "id": 2,
+        "customerCode": "KH-1111",
+        "customerType": {
+          "id": 2,
+          "name": "Platinum"
+        },
+        "name": "San San",
+        "dateOfBirth": "1992-08-08",
+        "idCard": "865342123",
+        "phoneNumber": "0901234567",
+        "gender": false,
+        "email": "xuandieu92@gmail.com",
+        "address": "K77/22 Thái Phiên, Quảng Trị",
+        "flagDelete": false
+      },
+      "facility": {
+        "id": 1,
+        "facilityCode": "DV-0001",
+        "name": "Villa Beach Front",
+        "area": 250,
+        "cost": 1000000,
+        "maxPeople": 10,
+        "standardRoom": "vip",
+        "descriptionOtherConvenience": "Có hồ bơi",
+        "poolArea": 50,
+        "numberOfFloors": 4,
+        "facilityType": {
+          "id": 1,
+          "name": "Villa"
+        },
+        "rentType": {
+          "id": 3,
+          "name": "day"
+        }
+      },
+      "id": 6
+    },
+    {
+      "name": "CT-0110",
+      "startDate": "2023-01-03",
+      "endDate": "2023-01-25",
+      "deposit": 3,
+      "employee": {
+        "id": 1,
+        "name": "Pin"
+      },
+      "customer": {
+        "id": 2,
+        "customerCode": "KH-1111",
+        "customerType": {
+          "id": 2,
+          "name": "Platinum"
+        },
+        "name": "San San",
+        "dateOfBirth": "1992-08-08",
+        "idCard": "865342123",
+        "phoneNumber": "0901234567",
+        "gender": false,
+        "email": "xuandieu92@gmail.com",
+        "address": "K77/22 Thái Phiên, Quảng Trị",
+        "flagDelete": false
+      },
+      "facility": {
+        "id": 1,
+        "facilityCode": "DV-0001",
+        "name": "Villa Beach Front",
+        "area": 250,
+        "cost": 1000000,
+        "maxPeople": 10,
+        "standardRoom": "vip",
+        "descriptionOtherConvenience": "Có hồ bơi",
+        "poolArea": 50,
+        "numberOfFloors": 4,
+        "facilityType": {
+          "id": 1,
+          "name": "Villa"
+        },
+        "rentType": {
+          "id": 3,
+          "name": "day"
+        }
+      },
+      "id": 7
     }
   ]
 }

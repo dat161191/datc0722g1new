@@ -8,10 +8,12 @@
       <tr>
         <th colspan="9">
           <h3><b>Contract List</b></h3>
-          <button type="button" class="btn btn-primary me-auto" data-bs-target="#addContract"
-                  data-bs-toggle="modal">
-            Create Contract
-          </button>
+          <form class="d-flex  justify-content-center" [formGroup]="searchContract" (ngSubmit)="onSearch()">
+            <input class="form-control me-1" style="width: 30%" type="search" placeholder="Search" formControlName="name">
+            <button class="btn btn-outline-light text-danger me-1" type="submit"><i class="fa-brands fa-searchengin"></i>Search</button>
+            <button class="btn btn-outline-light text-danger" type="button" [routerLink]="['/contract/create']"> Create Contract
+            </button>
+          </form>
         </th>
       </tr>
       <tr>
@@ -27,7 +29,7 @@
       </thead>
       <tbody>
       <tr *ngFor="let contract of contractList;index as i" class="text-danger">
-        <td>{{i+1}}</td>
+        <td>{{i + 1}}</td>
         <td>{{contract.name}}</td>
         <td>{{contract.facility?.name}}</td>
         <td>{{contract.customer?.name}}</td>
@@ -40,7 +42,7 @@
         </td>
         <td>
           <button type="button" class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#exampleModal"
-                  (click)="sendId(contract.id)"> Delete
+                  (click)="(temp=contract)"> Delete
           </button>
         </td>
       </tr>

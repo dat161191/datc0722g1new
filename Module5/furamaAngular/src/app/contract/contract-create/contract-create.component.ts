@@ -4,6 +4,10 @@ import {Employee} from "../../employee/Employee";
 import {Facility} from "../../facility/Facility";
 import {Customer} from "../../customer/Customer";
 import {Contract} from "../Contract";
+import {ContractService} from "../contract.service";
+import {EmployeeService} from "../../employee/employee.service";
+import {CustomerService} from "../../customer/service/customer.service";
+import {FacilityService} from "../../facility/service/facility.service";
 
 @Component({
   selector: 'app-contract-create',
@@ -11,11 +15,25 @@ import {Contract} from "../Contract";
   styleUrls: ['./contract-create.component.css']
 })
 export class ContractCreateComponent implements OnInit {
-  contract: FormGroup;
+  contractForm: FormGroup;
+  employees: Employee[] = [];
+  customers: Customer[] = [];
+  facilities: Facility[] = [];
+  contract: Contract = {};
 
-  constructor() {
-    this.contract = new FormGroup({
-      id: new FormControl('', Validators.required),
+  constructor(private contractService: ContractService, private employeeService: EmployeeService,
+              private customerService: CustomerService, private facilityService: FacilityService) {
+    this.employeeService.getAll().subscribe(data => {
+      this.employees = data
+    });
+    this.customerService.getAll().subscribe(data => {
+      this.customers = data
+    });
+    this.facilityService.getAll().subscribe(data => {
+      this.facilities = data
+    });
+    this.contractForm = new FormGroup({
+      name: new FormControl('', Validators.required),
       startDate: new FormControl('', Validators.required),
       endDate: new FormControl('', Validators.required),
       deposit: new FormControl('', Validators.required),
@@ -23,16 +41,23 @@ export class ContractCreateComponent implements OnInit {
       customer: new FormControl('', Validators.required),
       facility: new FormControl('', Validators.required),
     })
+    console.log(this.contractForm);
   }
 
   get cont() {
-    return this.contract.controls;
+    return this.contractForm.controls;
   }
 
   ngOnInit(): void {
   }
 
   createContract() {
-    console.log(this.contract.value);
+    console.log(this.contractForm.value);
+    this.contract = this.contractForm.value;
+
+    this.contractService.save(this.contract).subscribe(data => {
+      this.contractForm.reset();
+      alert("Create is success!!!");
+    });
   }
 }

@@ -4,16 +4,22 @@
   <div class="row">
     <div class="col col-1"></div>
     <div class="col col-10">
+
       <table class="table table-dark text-center table-hover text-light">
         <thead>
         <tr>
           <th colspan="11"><h3>CustomerList</h3>
-            <button class="btn btn-primary" type="button" [routerLink]="['/customer/create']"> Create new Customer
-            </button>
+            <form class="d-flex" [formGroup]="searchCustomer" (ngSubmit)="onSearch()">
+              <input class="form-control me-1" style="width: 50%" type="search" placeholder="Search"
+                     formControlName="name">
+              <button class="btn btn-outline-light me-1" type="submit"><i class="fa-brands fa-searchengin"></i></button>
+              <button class="btn btn-primary" type="button" [routerLink]="['/customer/create']"> Create Customer
+              </button>
+            </form>
           </th>
         </tr>
         <tr>
-          <th>STT</th>
+          <th>#</th>
           <th>Customer Name</th>
           <th>Customer Code</th>
           <th>Birthday</th>
@@ -26,7 +32,7 @@
         </thead>
         <tbody>
         <tr class="text-danger"
-            *ngFor="let customer of customerList;index as i ">
+            *ngFor="let customer of customerList | paginate:{itemsPerPage:4,currentPage:p} ;index as i ">
           <th>{{i + 1}}</th>
           <td>{{customer.name}}</td>
           <td>{{customer.customerCode}}</td>
@@ -40,12 +46,16 @@
           </td>
           <td>
             <button type="button" class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#exampleModal"
-                    (click)="sendId(customer.id)"> Delete
+                    (click)="(temp=customer)"> Delete
             </button>
           </td>
         <tr>
+        <tr>
+          <td colspan="9" *ngIf="customerList.length==0">No Result!!!</td>
+        </tr>
         </tbody>
       </table>
+      <pagination-controls (pageChange)="p=$event"></pagination-controls>
     </div>
     <div class="col col-1"></div>
   </div>
