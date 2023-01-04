@@ -35,8 +35,8 @@ export class CustomerService {
     return this.http.post<Customer>(this.URLCTM, customer);
   }
 
-  editCustomer(id: number, customer: Customer): Observable<Customer> {
-    return this.http.patch<Customer>(this.URLCTM + '/' + id, customer);
+  editCustomer(customer: Customer): Observable<Customer> {
+    return this.http.patch<Customer>(this.URLCTM + '/' + customer.id, customer);
   }
 
 }

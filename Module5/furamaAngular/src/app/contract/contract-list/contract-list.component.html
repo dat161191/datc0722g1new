@@ -9,9 +9,15 @@
         <th colspan="9">
           <h3><b>Contract List</b></h3>
           <form class="d-flex  justify-content-center" [formGroup]="searchContract" (ngSubmit)="onSearch()">
-            <input class="form-control me-1" style="width: 30%" type="search" placeholder="Search" formControlName="name">
-            <button class="btn btn-outline-light text-danger me-1" type="submit"><i class="fa-brands fa-searchengin"></i>Search</button>
-            <button class="btn btn-outline-light text-danger" type="button" [routerLink]="['/contract/create']"> Create Contract
+            <input class="form-control me-1" style="width: 30%" type="search" placeholder="SearchName"
+                   formControlName="name">
+            <input class="form-control me-1" style="width: 30%" type="search" placeholder="SearchID"
+                   formControlName="id">
+            <button class="btn btn-outline-light text-danger me-1" type="submit"><i
+              class="fa-brands fa-searchengin"></i>Search
+            </button>
+            <button class="btn btn-outline-light text-danger" type="button" [routerLink]="['/contract/create']"> Create
+              Contract
             </button>
           </form>
         </th>
@@ -28,7 +34,8 @@
       </tr>
       </thead>
       <tbody>
-      <tr *ngFor="let contract of contractList;index as i" class="text-danger">
+      <tr *ngFor="let contract of contractList | paginate:{itemsPerPage:4,currentPage:p};index as i"
+          class="text-danger">
         <td>{{i + 1}}</td>
         <td>{{contract.name}}</td>
         <td>{{contract.facility?.name}}</td>
@@ -46,8 +53,14 @@
           </button>
         </td>
       </tr>
+      <tr>
+        <td colspan="9" *ngIf="contractList.length==0">No Result!!!</td>
+      </tr>
       </tbody>
     </table>
+
+    <pagination-controls (pageChange)="p=$event"></pagination-controls>
+
   </div>
 
   <div class="col col-1"></div>

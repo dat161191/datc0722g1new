@@ -12,10 +12,24 @@ export class ContractService {
   constructor(private http: HttpClient) {
   }
 
-  getAll(searchKey: any = null): Observable<Contract[]> {
+  // getAll(searchKey: any = null): Observable<Contract[]> {
+  //   let urlSearch = this.URLCT;
+  //   if (searchKey != null) {
+  //     urlSearch += '?name_like=' + searchKey
+  //   }
+  //   console.log(urlSearch)
+  //   return this.http.get<Contract[]>(urlSearch);
+  // }
+  getAll(searchName: any = null, searchId: any = null): Observable<Contract[]> {
     let urlSearch = this.URLCT;
-    if (searchKey != null) {
-      urlSearch += '?name_like=' + searchKey
+    if (searchName && searchId) {
+      urlSearch += '?name_like=' + searchName + '&id_like=' + searchId;
+    }
+    if (searchName && !searchId) {
+      urlSearch += '?name_like=' + searchName;
+    }
+    if (!searchName && searchId) {
+      urlSearch += '?id_like=' + searchId;
     }
     console.log(urlSearch)
     return this.http.get<Contract[]>(urlSearch);

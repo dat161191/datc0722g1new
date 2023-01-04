@@ -3,6 +3,8 @@ import {Contract} from "../Contract";
 import {ContractService} from "../contract.service";
 import {Router} from "@angular/router";
 import {FormControl, FormGroup} from "@angular/forms";
+import {Facility} from "../../facility/Facility";
+import {FacilityService} from "../../facility/service/facility.service";
 
 @Component({
   selector: 'app-contract-list',
@@ -12,12 +14,14 @@ import {FormControl, FormGroup} from "@angular/forms";
 export class ContractListComponent implements OnInit {
   contractList: Contract[] = [];
   temp: Contract = {};
-  searchContract: FormGroup = new FormGroup({name: new FormControl()});
+  searchContract: FormGroup = new FormGroup({id: new FormControl(), name: new FormControl()});
+  p: number = 1;
 
-  constructor(private contractService: ContractService, private router: Router) {
+  constructor(private contractService: ContractService, private router: Router,private facilityService:FacilityService) {
   }
 
   ngOnInit(): void {
+    // @ts-ignore
     this.contractService.getAll().subscribe(data => {
       this.contractList = data;
     })
@@ -32,7 +36,8 @@ export class ContractListComponent implements OnInit {
   }
 
   onSearch() {
-    this.contractService.getAll(this.searchContract.value.name).subscribe(data => {
+    console.log(this.searchContract.value);
+    this.contractService.getAll(this.searchContract.value.name, this.searchContract.value.id).subscribe(data => {
       this.contractList = data;
     }, error => {
     }, () => {
