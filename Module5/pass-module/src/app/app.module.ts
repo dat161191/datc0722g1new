@@ -5,21 +5,21 @@ import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
 import {HttpClientModule} from '@angular/common/http';
 import {NgxPaginationModule} from 'ngx-pagination';
-import { ProductListComponent } from './product/product-list/product-list.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { FooterComponent } from './footer/footer.component';
-import { ProductCreateComponent } from './product/product-create/product-create.component';
-import { ProductEditComponent } from './product/product-edit/product-edit.component';
 import {ReactiveFormsModule} from '@angular/forms';
+import { ListConsignment } from './lo-hang/list-consignment/list-consignment';
+import { CreateGoodsComponent } from './lo-hang/create-goods/create-goods.component';
+import { EditConsignmentComponent } from './lo-hang/edit-consignment/edit-consignment.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ProductListComponent,
     NavbarComponent,
     FooterComponent,
-    ProductCreateComponent,
-    ProductEditComponent
+    ListConsignment,
+    CreateGoodsComponent,
+    EditConsignmentComponent,
   ],
   imports: [
     BrowserModule,
@@ -28,5 +28,5 @@ import {ReactiveFormsModule} from '@angular/forms';
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule {
-}
+export class AppModule {}
+

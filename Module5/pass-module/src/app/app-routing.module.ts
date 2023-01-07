@@ -1,14 +1,10 @@
 import {NgModule} from '@angular/core';
 import {Routes, RouterModule} from '@angular/router';
-import {ProductListComponent} from './product/product-list/product-list.component';
-import {ProductCreateComponent} from './product/product-create/product-create.component';
-import {ProductEditComponent} from './product/product-edit/product-edit.component';
+import {ListConsignment} from './lo-hang/list-consignment/list-consignment';
+import {CreateGoodsComponent} from './lo-hang/create-goods/create-goods.component';
 
 const routes: Routes = [
-    {path: '', component: ProductListComponent},
-    {path: 'product/create', component: ProductCreateComponent},
-    {path: 'product/edit/:id', component: ProductEditComponent}
-  ]
+    {path: 'list', component: ListConsignment}]
 ;
 
 @NgModule({
