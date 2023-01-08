@@ -21,8 +21,12 @@ public class ConsignmentRestController {
     private IConsignmentService consignmentService;
 
     @GetMapping("")
-    public ResponseEntity<Page<Consignment>> display(@PageableDefault(size = 100) Pageable pageable) {
-        Page<Consignment> consignments = consignmentService.getList(pageable);
+//    public ResponseEntity<Page<Consignment>> display(@PageableDefault(size = 100) Pageable pageable) {
+    public ResponseEntity<Page<Consignment>> display(@RequestParam(defaultValue = "") String productName, @RequestParam(defaultValue = "") String importDate,
+                                                     @RequestParam(defaultValue = "1") int page,
+                                                     @RequestParam() int size) {
+        Pageable pageable = Pageable.ofSize(size);
+        Page<Consignment> consignments = consignmentService.getList(productName, importDate, pageable.withPage(page));
         if (consignments.isEmpty()) {
             return new ResponseEntity<>(HttpStatus.NO_CONTENT);
         }

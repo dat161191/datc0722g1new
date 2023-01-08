@@ -15,8 +15,8 @@ public class ConsignmentService implements IConsignmentService {
     }
 
     @Override
-    public Page<Consignment> getList(Pageable pageable) {
-        return consignmentRepository.getList(pageable);
+    public Page<Consignment> getList(String productName,String importDate,Pageable pageable) {
+        return consignmentRepository.getList(productName,importDate,pageable);
     }
 
     @Override
