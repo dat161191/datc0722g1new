@@ -7,6 +7,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 
 public interface IConsignmentRepository extends JpaRepository<Consignment,Integer> {
-    @Query(value = "select * from consignment join product p on p.pro_id = consignment.product_pro_id",countQuery = "select * from consignment join product p on p.pro_id = consignment.product_pro_id",nativeQuery = true)
+    @Query(value = "select * from consignment join product p on p.pro_id = consignment.product_pro_id where consignment.deleted=false",countQuery = "select * from consignment join product p on p.pro_id = consignment.product_pro_id where consignment.deleted=false",nativeQuery = true)
     Page<Consignment> getList(Pageable pageable);
 }

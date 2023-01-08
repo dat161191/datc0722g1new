@@ -23,4 +23,14 @@ public class ConsignmentService implements IConsignmentService {
     public void save(Consignment consignment) {
         consignmentRepository.save(consignment);
     }
+
+    @Override
+    public void remove(Integer id) {
+        consignmentRepository.deleteById(id);
+    }
+
+    @Override
+    public Consignment findById(Integer id) {
+        return consignmentRepository.findById(id).get();
+    }
 }

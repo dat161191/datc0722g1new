@@ -8,4 +8,7 @@ public interface IConsignmentService {
     Page<Consignment> getList(Pageable pageable);
 
     void save(Consignment consignment);
+    void remove(Integer id);
+
+    Consignment findById(Integer id);
 }
