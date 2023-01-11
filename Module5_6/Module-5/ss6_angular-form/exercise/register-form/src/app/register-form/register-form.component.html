@@ -1,0 +1,123 @@
+<div class="container">
+  <div class="row">
+    <div class="col-3"></div>
+    <div class="col-6">
+      <form [formGroup]="registerForm" (ngSubmit)="create()">
+        <h3 class="text-lg-center text-danger">Register Form!</h3>
+        <hr>
+        <div class="row m-1 mb-1">
+          <div class="col-4">
+            <label for="email">Email</label>
+          </div>
+          <div class="col-8">
+            <input type="email" name="email" id="email" formControlName="email">
+            <div *ngIf="!regForm?.valid && (regForm.email.dirty ||regForm.email.touched)">
+              <small *ngIf="regForm.email.errors?.required" style="color:red;"> Email is required! </small>
+              <small *ngIf="regForm.email.errors?.email" style="color:red;"> Not format email! </small>
+            </div>
+          </div>
+        </div>
+
+        <div class="row m-1 mb-1">
+          <div class="col-4">
+            <label for="password">Password</label>
+          </div>
+          <div class="col-8">
+            <input type="password" name="password" id="password" formControlName="password">
+            <div *ngIf="!regForm?.valid && (regForm.password.dirty ||regForm.password.touched)">
+              <small *ngIf="regForm.password.errors?.required" style="color:red;"> Password is required! </small>
+              <small *ngIf="regForm.password.errors?.minlength" style="color:red;"> Min length is 6 </small>
+            </div>
+          </div>
+        </div>
+
+        <div class="row m-1 mb-1">
+          <div class="col-4">
+            <label for="confirmPassword">ConfirmPassword</label>
+          </div>
+          <div class="col-8">
+            <input type="password" name="confirmPassword" id="confirmPassword" formControlName="confirmPassword">
+            <div *ngIf="!regForm?.valid && (regForm.confirmPassword.dirty ||regForm.confirmPassword.touched)">
+              <small *ngIf="regForm.confirmPassword.errors?.required" style="color:red;"> ConfirmPassword is
+                required! </small>
+              <small *ngIf="regForm.confirmPassword.errors?.checkPassword" style="color:red;"> ConfirmPassword didn't
+                match </small>
+            </div>
+          </div>
+        </div>
+
+        <div class="row m-1 mb-1">
+          <div class="col-4">
+            <label for="country">Country</label>
+          </div>
+          <div class="col-8">
+            <select id="country" formControlName="country" class="form-select" style="width: 100%;border-radius: 10px">
+              <option value="">---Choosen---</option>
+              <option *ngFor="let c of countryList" [ngValue]="c">{{c.name}}</option>
+            </select>
+            <div *ngIf="!regForm?.valid && (regForm.country.dirty ||regForm.country.touched)">
+              <small *ngIf="regForm.country.errors?.required" style="color:red;"> Country is required! </small>
+            </div>
+          </div>
+        </div>
+
+        <div class="row m-1 mb-1">
+          <div class="col-4">
+            <label for="age">Age</label>
+          </div>
+          <div class="col-8">
+            <input type="number" min="16" max="60" name="age" id="age" formControlName="age">
+            <div *ngIf="!regForm?.valid && (regForm.age.dirty ||regForm.age.touched)">
+              <small *ngIf="regForm.age.errors?.required" style="color:red;"> Phone is required! </small>
+              <small *ngIf="regForm.age.errors?.min" style="color:red;"> Min age is 18 </small>
+            </div>
+          </div>
+        </div>
+
+        <div class="row m-1 mb-1">
+          <div class="col-4">
+            <label for="phone">Phone</label>
+          </div>
+          <div class="col-8">
+            <input type="text" name="phone" id="phone" formControlName="phone">
+            <div c *ngIf="!regForm?.valid && (regForm.phone.dirty ||regForm.phone.touched)">
+              <small *ngIf="regForm.phone.errors?.required" style="color:red;"> Phone is required! </small>
+              <small *ngIf="regForm.phone.errors?.pattern" style="color:red;"> Not format phone </small>
+            </div>
+          </div>
+        </div>
+
+        <div class="row m-1 mb-1">
+          <div class="col-4">
+            <label>Gender</label>
+          </div>
+          <div class="col-8">
+            <div class="row">
+              <div class="col-6">
+                <label for="male">Male</label>
+                <input style="width: 20px" type="radio" value=true id="male" name="gender" formControlName="gender">
+              </div>
+              <div class="col-6">
+                <label for="female">FeMale</label>
+                <input type="radio" style="width: 20px" value=false id="female" name="gender" formControlName="gender">
+              </div>
+              <div *ngIf="!regForm?.valid && (regForm.gender.dirty ||regForm.gender.touched||regForm.gender.pristine)">
+                <small *ngIf="regForm.gender.errors?.required" style="color:red;"> Gender is required! </small>
+              </div>
+            </div>
+          </div>
+        </div>
+        <hr>
+
+        <div class="row text-lg-center align-items-center justify-content-center">
+          <small style="color: blue">Enter correctly to show the summit button!!!</small>
+          <button class="btn btn-primary w-25 me-2" *ngIf="registerForm.valid" type="submit">Sumit</button>
+          <button class="btn btn-primary w-25" type="reset">Reset</button>
+        </div>
+      </form>
+    </div>
+    <div class="col-3"></div>
+  </div>
+</div>
+
+
